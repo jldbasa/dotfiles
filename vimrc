@@ -1,10 +1,48 @@
-"" tabs
+" -----------------------------------------------------------------------------  
+" |                            VIM Settings                                   |
+" |                                                                           |
+" -----------------------------------------------------------------------------  
+
+
+" Encoding ********************************************************************
+set fenc=utf-8
+set enc=utf-8
+
+
+" Mappings ********************************************************************
+imap jj <Esc>
+imap uu _
+imap hh =>
+imap aa @
+
+
+" Tabs ************************************************************************
 let mapleader = ","
 map <leader>tt :tabnew<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <leader>tn :tabnext<cr>
 map <leader>tp :tabprevious<cr>
+
+
+" Toggles *********************************************************************
+map <F3> :set paste<CR>
+map <F4> :set nopaste<CR>
+imap <F3> <C-O>:set paste<CR>
+imap <F4> <nop>
+set pastetoggle=<F4>
+:map <F6> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr . "[\t"<CR>
+
+
+" Tab / Indentation ***********************************************************
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set smartindent
+nnoremap <Esc>P P'[v']=
+nnoremap <Esc>p p'[v']=
+
 
 "" custom setting
 set backspace=eol,start,indent
@@ -21,9 +59,6 @@ set textwidth=500
 set mouse-=a
 set noerrorbells
 
-"" encoding
-set fenc=utf-8
-set enc=utf-8
 
 "" search options
 set wrapscan
@@ -50,13 +85,6 @@ au BufNewFile *.sh s,^,#!/bin/sh\r#\r\r,
 au BufNewFile,BufRead *.jake,*.param,*.ros set filetype=html
 au BufNewFile,BufRead *.jake,*.param,*.ros set filetype=html
 
-"" toggles
-map <F3> :set paste<CR>
-map <F4> :set nopaste<CR>
-imap <F3> <C-O>:set paste<CR>
-imap <F4> <nop>
-set pastetoggle=<F4>
-:map <F6> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr . "[\t"<CR>
 
 "" ui
 set background=light
@@ -65,15 +93,6 @@ set showmatch matchtime=3
 set laststatus=2
 set title
 
-"" tab / indentation
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set autoindent
-set smartindent
-nnoremap <Esc>P P'[v']=
-nnoremap <Esc>p p'[v']=
-"" set tabstop=4 softtabstop=4 expandtab
 
 "" php
 let php_sql_query=1
