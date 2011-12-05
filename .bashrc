@@ -39,8 +39,6 @@ export PS4='+'     # Prompt 4
 # | Alias                                                                     |
 # +---------------------------------------------------------------------------+
 
-alias vi='vim'
-
 # 3-chars nice sweet git aliases
 alias gad='git add'
 alias gbr='git branch'
@@ -76,7 +74,8 @@ alias gui='gitg'
 # +---------------------------------------------------------------------------+
 
 # Set bash editor to 'vi'
-set -o vi
+#alias vi='vim'
+#set -o vi
 
 # Editor
 export EDITOR='vim'
