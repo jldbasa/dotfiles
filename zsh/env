@@ -1,1 +1,4 @@
+export EDITOR='vim'
+export PATH=$PATH:~/bin
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
