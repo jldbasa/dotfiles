@@ -34,7 +34,7 @@ unsetopt bgnice autoparamslash
 zmodload -a zsh/stat stat
 zmodload -a zsh/zpty zpty
 zmodload -a zsh/zprof zprof
-zmodload -ap zsh/mapfile mapfile
+zmodload -ap zsh/mapfile mapfile &>/dev/null
 
 
 PATH="/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:$PATH"
@@ -55,7 +55,8 @@ EDITOR='vim'
    (( count = $count + 1 ))
     done
     PR_NO_COLOR="%{$terminfo[sgr0]%}"
-PS1="$(vcprompt) [$PR_BLUE%n$PR_WHITE@$PR_GREEN%U%m%u$PR_NO_COLOR:$PR_RED%2c$PR_NO_COLOR]%(!.#.$) "
+#PS1="$(vcprompt) [$PR_BLUE%n$PR_WHITE@$PR_GREEN%U%m%u$PR_NO_COLOR:$PR_RED%2c$PR_NO_COLOR]%(!.#.$) "
+PS1="[$PR_BLUE%n$PR_WHITE@$PR_GREEN%U%m%u$PR_NO_COLOR:$PR_RED%2c$PR_NO_COLOR]%(!.#.$) "
 
 RPS1="$PR_LIGHT_YELLOW(%D{%m-%d %H:%M})$PR_NO_COLOR"
 #LANGUAGE=
