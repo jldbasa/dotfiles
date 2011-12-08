@@ -31,6 +31,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/home/jerome/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
-. ~/bin/dotfiles/zsh/env
-. ~/bin/dotfiles/zsh/config
-. ~/bin/dotfiles/zsh/aliases
+source ~/bin/dotfiles/zsh/env
+source ~/bin/dotfiles/zsh/config
+source ~/bin/dotfiles/zsh/aliases
