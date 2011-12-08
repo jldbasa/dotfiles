@@ -75,5 +75,18 @@ On_ICyan='\e[0;106m'    # Cyan
 On_IWhite='\e[0;107m'   # White
 
 
+# +---------------------------------------------------------------------------+
+# | Prompt                                                                    |
+# +---------------------------------------------------------------------------+
+PS1="\n\u: \w \[$BGreen\]\$(vcprompt)\[$Color_Off\] \n> "
+PS1="\n\u: \w \[$BGreen\]\$(vcprompt)\[$Color_Off\]"
+case `id -u` in
+0) PS1="${PS1}\n# ";;
+*) PS1="${PS1}\n> ";;
+esac
+# export PS1="\[${COLOR_GRAY}\]\u@\h \[${COLOR_GREEN}\]\w > \[${COLOR_NC}\]"  # Primary prompt with user, host, and path 
+#export PS1="\[${COLOR_GREEN}\]\w > \[${COLOR_NC}\]"  # Primary prompt with only a path
+#export PS2='> '    # Secondary prompt
+#export PS3='#? '   # Prompt 3
+#export PS4='+'     # Prompt 4
 
-PS1="\n\u: \w \[$Green\]\$(vcprompt)\[$Color_Off\] \n> "
