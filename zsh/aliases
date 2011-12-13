@@ -1,3 +1,5 @@
 alias jproxy='ssh -C2qTnN -L 8080:localhost:2020 vps_jerome'
 alias c='clear'
 alias v='vim'
+alias h='history'
+alias x='exit'
