@@ -1,7 +1,16 @@
 dotvim
 ======
-Contains various . files e.g. `.screenrc`
+Contains various . files e.g. `.screenrc`, `.gitignore`
 
 Installation
 ------------
-* TBD
+    ## Clone Repo
+    $ mkdir ~/bin
+    $ cd ~/bin
+    $ git clone https://jldbasa@github.com/jldbasa/dotfiles.git
+    
+    ## Symlink various file e.g.
+    $ ln -s ~/bin/dotfiles/zshrc ~/.zshrc 
+    
+    
+    
