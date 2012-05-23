@@ -1,4 +1,7 @@
 export EDITOR='vim'
 export PATH=$PATH:~/bin
 
+# Insert indicator for vi-mode:
+MODE_INDICATOR="%{$fg[red]%} -- COMMAND --%{$reset_color%}"
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
