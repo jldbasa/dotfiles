@@ -1,3 +1,8 @@
-set passkeys+=mail.google.com:'!#*+-./<C-Down><C-s><Enter>?INU[]acefjklmnopqrsuvxyz',*a,*n,*r,*s,*t,*u,ga,gc,gd,gi,gl,gs,gt,yo
-set passkeys+=www.google.com/reader:'!#*+-./<C-Down><C-s><Enter>?AONPXOTS[]acefjklmnopqrsuvxyz',*a,*n,*r,*s,*t,*u,ga,gc,gd,gi,gl,gs,gt,yo
+"hg6784
+
+loadplugins '\.(js|penta)$'
+group user
+set passkeys=mail.google.com:'!#*+-./<C-Down><C-s><Enter>?INU[]acefjklmnopqrsuvxyz',*a,*n,*r,*s,*t,*u,ga,gc,gd,gi,gl,gs,gt,yo,www.google.com/reader:'!#*+-./<C-Down><C-s><Enter>?AONPXOTS[]acefjklmnopqrsuvxyz',*a,*n,*r,*s,*t,*u,ga,gc,gd,gi,gl,gs,gt,yo
 set strictfocus=google.com:laissez-faire,'chrome:*':laissez-faire,*:moderate
+
+" vim: set ft=pentadactyl:
