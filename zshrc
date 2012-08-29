@@ -36,3 +36,8 @@ source ~/bin/dotfiles/zsh/config
 source ~/bin/dotfiles/zsh/aliases
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Python Settings
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
