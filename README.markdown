@@ -10,7 +10,7 @@ Installation
 ------------
     ## Clone Repo
     $ mkdir ~/Github
-    $ cd ~/Githubj
+    $ cd ~/Github
     $ git clone https://jldbasa@github.com/jldbasa/dotfiles.git
     $ chmod +x install.sh
     $ ./install.sh
