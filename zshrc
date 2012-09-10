@@ -31,9 +31,9 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/home/jerome/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
-source ~/bin/dotfiles/zsh/env
-source ~/bin/dotfiles/zsh/config
-source ~/bin/dotfiles/zsh/aliases
+source ~/Github/dotfiles/zsh/env
+source ~/Github/dotfiles/zsh/config
+source ~/Github/dotfiles/zsh/aliases
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
