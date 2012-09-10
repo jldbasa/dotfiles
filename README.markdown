@@ -2,11 +2,40 @@ dotfiles
 ======
 Contains various . files e.g. `.screenrc`, `.gitignore`
 
+For vim, you can open the file `.gitmodules` to see which plugins are installed. 
+I use [pathogen.vim](https://github.com/tpope/vim-pathogen) to bundle them.
+
+
 Installation
 ------------
-    # Clone Repo
+    ## Clone Repo
     $ mkdir ~/Github
     $ cd ~/Githubj
     $ git clone https://jldbasa@github.com/jldbasa/dotfiles.git
     $ chmod +x install.sh
     $ ./install.sh
+
+
+Adding VIM plugins
+------------
+* to add, use `git submodule` command e.g. `git submodule add 
+  git://github.com/ervandew/supertab.git bundle/supertab`
+
+
+Plugins Tips
+------------
+* bufexplorer
+  * `\be` - brings up the bufexplorer window
+  * `q`   - closes the bufexplorer window
+* taglist
+  * `Tlist` - brings up the taglist window
+* vim-fugitive
+  * `Gstatus` - brings up the status window
+  * `-` - add/reset a file's change
+  * `C` - perform git commit
+  * `q` - closes status window
+
+
+References
+------------
+[1]: http://stevelosh.com/blog/2010/09/coming-home-to-vim/?
