@@ -34,3 +34,9 @@
 [submodule "vim/bundle/numbers.vim"]
 	path = vim/bundle/numbers.vim
 	url = git://github.com/myusuf3/numbers.vim.git
+[submodule "vim/bundle/vim-powerline"]
+	path = vim/bundle/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "vim/bundle/vim-bufexplorer"]
+	path = vim/bundle/vim-bufexplorer
+	url = https://github.com/slack/vim-bufexplorer.git

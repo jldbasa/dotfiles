@@ -15,6 +15,10 @@ call pathogen#helptags()
 
 set nocompatible
 set encoding=utf-8
+
+set list                           " show hidden characters
+set listchars=tab:▸\ ,eol:¬        " Use the same symbols as TextMate for tabstops and EOLs
+
 " set pastetoggle=<F4>
 
 
@@ -84,45 +88,45 @@ set colorcolumn=85
 " +---------------------------------------------------------------------------+
 " | Status line                                                               |
 " +---------------------------------------------------------------------------+
-set statusline=%f                   "tail of the filename
+"set statusline=%f                   "tail of the filename
 
-""display a warning if file encoding isnt utf-8
-set statusline+=%#warningmsg#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
+"""display a warning if file encoding isnt utf-8
+"set statusline+=%#warningmsg#
+"set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
+"set statusline+=%*
 
-set statusline+=%h                  "help file flag
-set statusline+=%y                  "filetype
-set statusline+=%r                  "read only flag
-set statusline+=%m                  "modified flag
+"set statusline+=%h                  "help file flag
+"set statusline+=%y                  "filetype
+"set statusline+=%r                  "read only flag
+"set statusline+=%m                  "modified flag
 
-set statusline+=%{fugitive#statusline()}
+"set statusline+=%{fugitive#statusline()}
 
-set statusline+=%#error#
-set statusline+=%{StatuslineTabWarning()}
-set statusline+=%*
+"set statusline+=%#error#
+"set statusline+=%{StatuslineTabWarning()}
+"set statusline+=%*
 
-set statusline+=%{StatuslineTrailingSpaceWarning()}
+"set statusline+=%{StatuslineTrailingSpaceWarning()}
 
-set statusline+=%{StatuslineLongLineWarning()}
+"set statusline+=%{StatuslineLongLineWarning()}
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-"display a warning if &paste is set
-set statusline+=%#error#
-set statusline+=%{&paste?'[paste]':''}
-set statusline+=%*
+""display a warning if &paste is set
+"set statusline+=%#error#
+"set statusline+=%{&paste?'[paste]':''}
+"set statusline+=%*
 
-set statusline+=%=                  "left/right separator
-set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
-set statusline+=%c,                 "cursor column
-set statusline+=%l/%L               "cursor line/total lines
-set statusline+=\ %P                "percent through file
-set laststatus=2
+"set statusline+=%=                  "left/right separator
+"set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
+"set statusline+=%c,                 "cursor column
+"set statusline+=%l/%L               "cursor line/total lines
+"set statusline+=\ %P                "percent through file
+"set laststatus=2
 
-"set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
+""set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
 
 
@@ -134,6 +138,10 @@ nnoremap <f1> :BufExplorer<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f3> :TlistToggle<cr>
 nnoremap <f4> :NumbersToggle<CR> 
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
 
 "clean-up whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>  
@@ -160,6 +168,9 @@ autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 "syntastic settings
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
+
+"powerline settings
+let g:Powerline_symbols = 'fancy'
 
 
 " +---------------------------------------------------------------------------+
