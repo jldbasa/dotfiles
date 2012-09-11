@@ -40,3 +40,6 @@
 [submodule "vim/bundle/vim-bufexplorer"]
 	path = vim/bundle/vim-bufexplorer
 	url = https://github.com/slack/vim-bufexplorer.git
+[submodule "vim/bundle/ack.vim"]
+	path = vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
