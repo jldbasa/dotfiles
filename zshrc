@@ -35,11 +35,17 @@ source ~/Github/dotfiles/zsh/env
 source ~/Github/dotfiles/zsh/config
 source ~/Github/dotfiles/zsh/aliases
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# RVM
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 
 # Python Settings
+export PATH=$PATH:/usr/local/share/python/
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/share/python/virtualenvwrapper.sh
 
 
 # Terminal 256 colors
