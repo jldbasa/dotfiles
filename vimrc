@@ -13,6 +13,7 @@ silent! call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 
+let os = substitute(system('uname'), "\n", "", "")
 set nocompatible
 set encoding=utf-8
 
@@ -194,7 +195,9 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
 "powerline settings
-let g:Powerline_symbols = 'fancy'
+if os != "CYGWIN_NT-6.1-WOW64"
+  let g:Powerline_symbols = 'fancy'
+endif
 
 
 " +---------------------------------------------------------------------------+
