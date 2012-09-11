@@ -45,8 +45,11 @@ export PATH=$PATH:/usr/local/share/python/
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/share/python/virtualenvwrapper.sh
 
+if [ -f /usr/local/share/python/virtualenvwrapper.sh ]
+then
+  source /usr/local/share/python/virtualenvwrapper.sh
+fi
 
 # Terminal 256 colors
 export TERM="xterm-256color"
