@@ -163,6 +163,7 @@ nnoremap <f1> :BufExplorer<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f3> :TlistToggle<cr>
 nnoremap <f4> :NumbersToggle<CR> 
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
@@ -312,4 +313,16 @@ function! StatuslineCurrentHighlight()
     else
         return '[' . name . ']'
     endif
+endfunction
+
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
 endfunction
