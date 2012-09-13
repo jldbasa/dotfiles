@@ -20,7 +20,7 @@ set encoding=utf-8
 set list                           " show hidden characters
 set listchars=tab:▸\ ,eol:¬        " Use the same symbols as TextMate for tabstops and EOLs
 
-" set pastetoggle=<F4>
+set pastetoggle=<f9>
 
 
 " set color scheme
@@ -86,6 +86,11 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
 
 
 " +---------------------------------------------------------------------------+
@@ -167,6 +172,9 @@ nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
+
+" Open vimrc
+nmap <leader>v :tabedit $MYVIMRC<CR>
 
 
 "clean-up whitespace
