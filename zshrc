@@ -34,22 +34,3 @@ export PATH=/home/jerome/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
 source ~/Github/dotfiles/zsh/env
 source ~/Github/dotfiles/zsh/config
 source ~/Github/dotfiles/zsh/aliases
-
-
-# RVM
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-
-# Python Settings
-export PATH=$PATH:/usr/local/share/python/
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export WORKON_HOME=$HOME/.virtualenvs
-
-if [ -f /usr/local/share/python/virtualenvwrapper.sh ]
-then
-  source /usr/local/share/python/virtualenvwrapper.sh
-fi
-
-# Terminal 256 colors
-export TERM="xterm-256color"
