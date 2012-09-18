@@ -10,3 +10,6 @@ alias please='sudo'
 # Python
 alias runserver='python manage.py runserver'
 alias syncdb='python manage.py syncdb'
+
+# Git
+alias grb='git rebase'
