@@ -7,4 +7,4 @@ set cursorline
 set anti
 
 au FocusLost * :wa " Save on losing window focus
-set guifont=Menlo:h12
+set guifont=Menlo\ Regular\ for\ Powerline:h12

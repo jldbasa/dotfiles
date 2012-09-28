@@ -25,9 +25,10 @@ set pastetoggle=<f9>
 
 " set color scheme
 if has('gui_running')
-colorscheme Tomorrow-Night
+  colorscheme Tomorrow-Night
+  set guifont=Menlo\ Regular\ for\ Powerline:h12
 else
-colorscheme Tomorrow-Night
+  colorscheme Tomorrow-Night
 end
 
 set number
