@@ -6,6 +6,7 @@ git submodule update --init
 echo "Back-up files to ~/.dotfiles_old"
 mkdir ~/.dotfiles_old
 mv ~/.editrc ~/.dotfiles_old
+mv ~/.gemrc ~/.dotfiles_old
 mv ~/.gitconfig ~/.dotfiles_old
 mv ~/.gitignore ~/.dotfiles_old
 mv ~/.gvimrc ~/.dotfiles_old
@@ -18,6 +19,7 @@ mv ~/.zshrc ~/.dotfiles_old
 
 echo "Symlinking files"
 ln -s ~/Github/dotfiles/editrc ~/.editrc
+ln -s ~/Github/dotfiles/gemrc ~/.gemrc
 ln -s ~/Github/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/Github/dotfiles/gitignore ~/.gitignore
 ln -s ~/Github/dotfiles/gvimrc ~/.gvimrc
