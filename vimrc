@@ -227,7 +227,7 @@ let g:bufExplorerShowRelativePath=1
 let Tlist_Inc_Winwidth=0
 
 "makegreen - MakeGreen plugin and Ruby RSpec. Uncomment to use.
-autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+"autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
 "snipMate
 :filetype plugin on
