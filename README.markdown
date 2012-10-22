@@ -34,9 +34,6 @@ Plugins Tips
   - `q` - closes status window
 - vim-powerline
   - [powerline font](https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher)
-- command-t
-  - [installation](https://github.com/wincent/Command-T)
-  - check if your vim/mvim is 32bit or 64bit
 
 
 References

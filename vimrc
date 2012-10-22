@@ -237,6 +237,9 @@ if os != "CYGWIN_NT-6.1-WOW64"
   let g:Powerline_symbols = 'fancy'
 endif
 
+"ctrlp settings
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 
 " +---------------------------------------------------------------------------+
 " | Misc                                                                      |
