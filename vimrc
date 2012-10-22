@@ -167,7 +167,6 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitiv
 let mapleader=","
 nnoremap <f1> :BufExplorer<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
-nnoremap <f3> :TlistToggle<cr>
 nnoremap <f4> :NumbersToggle<CR> 
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
@@ -222,9 +221,6 @@ endif
 " +---------------------------------------------------------------------------+
 " bufexplorer - set the relative path. Press "R" to switch to absolute
 let g:bufExplorerShowRelativePath=1
-
-" taglist
-let Tlist_Inc_Winwidth=0
 
 "makegreen - MakeGreen plugin and Ruby RSpec. Uncomment to use.
 "autocmd BufNewFile,BufRead *_spec.rb compiler rspec
