@@ -13,3 +13,4 @@ alias syncdb='python manage.py syncdb'
 
 # Git
 alias grb='git rebase'
+alias gcd='git checkout dev-jerome'
