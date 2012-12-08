@@ -22,6 +22,13 @@ Adding VIM plugins
   git://github.com/ervandew/supertab.git bundle/supertab`
 
 
+Assets
+------------
+- Install *ubuntu-mono-powerline-ttf* - `git clone
+  https://github.com/pdf/ubuntu-mono-powerline-ttf.git
+  ~/.fonts/ubuntu-mono-powerline-ttf` and `fc-cache -vf`
+    
+
 Plugins Tips
 ------------
 - bufexplorer
