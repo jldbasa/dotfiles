@@ -20,7 +20,7 @@ set encoding=utf-8
 set list                           " show hidden characters
 set listchars=tab:▸\ ,eol:¬        " Use the same symbols as TextMate for tabstops and EOLs
 
-set pastetoggle=<f9>
+set pastetoggle=<f2>
 
 
 " set color scheme
@@ -63,6 +63,7 @@ set title                           " Set the terminal's title
 set visualbell                      " No beeping.
 syntax enable                       " Turn on syntax highlighting
 
+set noswapfile                      " Don't create swapfile
 set nobackup                        " Don't make a backup before overwriting a file.
 set nowritebackup                   " And again.
 set directory=$HOME/.vim/tmp//,.    " Keep swap files in one location
