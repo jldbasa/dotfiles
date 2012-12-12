@@ -43,6 +43,13 @@ Plugins Tips
   - [powerline font](https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher)
 
 
+Other Settings
+------------
+- Terminal
+  - Background color: #262626
+  - Foregroud color: #C5C8C6
+
+
 References
 ------------
 - [Coming home to vim](http://stevelosh.com/blog/2010/09/coming-home-to-vim/?)
