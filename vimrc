@@ -20,7 +20,7 @@ set encoding=utf-8
 set list                           " show hidden characters
 set listchars=tab:▸\ ,eol:¬        " Use the same symbols as TextMate for tabstops and EOLs
 
-set pastetoggle=<f2>
+set pastetoggle=<f9>
 
 
 " set color scheme
