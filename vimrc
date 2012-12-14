@@ -79,7 +79,7 @@ set laststatus=2                    " Show the status line all the time
 set autoindent
 set smartindent
 
-set shell=/bin/bash                 " Some commands seem to have problems with zsh"
+"set shell=/bin/bash                 " Some commands seem to have problems with zsh"
 
 set wildignore+=vendor,log,tmp,*.swp
 
