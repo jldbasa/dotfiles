@@ -14,3 +14,6 @@ alias syncdb='python manage.py syncdb'
 # Git
 alias grb='git rebase'
 alias gcd='git checkout dev-jerome'
+
+# Vmail
+alias vml='rvm --create use ruby-1.9.3@vmail; vmail'
