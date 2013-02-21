@@ -15,6 +15,7 @@ mv ~/.pentadactylrc ~/.dotfiles_old
 mv ~/.tmux.conf ~/.dotfiles_old
 mv ~/.vim ~/.vim ~/.dotfiles_old
 mv ~/.vimrc ~/.vimrc ~/.dotfiles_old
+mv ~/.todo.cfg ~/.vimrc ~/.dotfiles_old
 mv ~/.zshrc ~/.dotfiles_old
 
 echo "Symlinking files"
@@ -28,6 +29,7 @@ ln -s ~/Github/dotfiles/pentadactylrc ~/.pentadactylrc
 ln -s ~/Github/dotfiles/vim ~/.vim
 ln -s ~/Github/dotfiles/vimrc ~/.vimrc
 ln -s ~/Github/dotfiles/tmux ~/.tmux.conf
+ln -s ~/Github/dotfiles/todo.cfg ~/.todo.cfg
 ln -s ~/Github/dotfiles/zshrc ~/.zshrc
 
 #echo "Updating submodules"

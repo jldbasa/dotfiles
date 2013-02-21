@@ -17,3 +17,6 @@ alias gcd='git checkout dev-jb'
 
 # Vmail
 alias vml='rvm --create use ruby-1.9.3@vmail; vmail'
+
+# Todo.txt
+alias t="todo.sh -d ~/.todo.cfg"
