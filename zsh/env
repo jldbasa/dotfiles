@@ -8,22 +8,33 @@ MODE_INDICATOR="%{$fg[red]%} -- COMMAND --%{$reset_color%}"
 
 
 # RVM
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+#export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+# Boxen
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
+## rbenv
+#export RBENV_ROOT="${HOME}/.rbenv"
+
+#if [ -d "${RBENV_ROOT}" ]; then
+  #export PATH="${RBENV_ROOT}/bin:${PATH}"
+  #eval "$(rbenv init -)"
+#fi
 
 
 # Python
-export PATH=$PATH:/usr/local/share/python/
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export WORKON_HOME=$HOME/.virtualenvs
+ #export PATH=$PATH:/usr/local/share/python/
+#export LC_ALL=en_US.UTF-8
+#export LANG=en_US.UTF-8
+#export WORKON_HOME=$HOME/.virtualenvs
 
-if [ -f /usr/local/share/python/virtualenvwrapper.sh ]
-then
-  source /usr/local/share/python/virtualenvwrapper.sh
-fi
+#if [ -f /usr/local/share/python/virtualenvwrapper.sh ]
+#then
+  #source /usr/local/share/python/virtualenvwrapper.sh
+#fi
 
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]
-then
-  source /usr/local/bin/virtualenvwrapper.sh
-fi
+#if [ -f /usr/local/bin/virtualenvwrapper.sh ]
+#then
+  #source /usr/local/bin/virtualenvwrapper.sh
+#fi
