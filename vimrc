@@ -8,9 +8,30 @@
 " +---------------------------------------------------------------------------+
 " | VIM Settings                                                              |
 " +---------------------------------------------------------------------------+
-" pathogen plugin - activate pathogen (fuck yeah!)
-silent! call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-git'
+Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
+Bundle 'ervandew/supertab'
+Bundle 'myusuf3/numbers.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'slack/vim-bufexplorer'
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'slim-template/vim-slim'
+Bundle 'thoughtbot/vim-rspec'
 
 
 let os = substitute(system('uname'), "\n", "", "")
@@ -215,6 +236,11 @@ else
   map <C-0> :tablast<CR>
 endif
 
+" Rspec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 
 " +---------------------------------------------------------------------------+
@@ -241,6 +267,8 @@ endif
 "ctrlp settings
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+"Rspec.vim
+let g:rspec_command = "!bundle exec rspec {spec}"
 
 " +---------------------------------------------------------------------------+
 " | Misc                                                                      |

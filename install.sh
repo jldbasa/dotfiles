@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-echo "Initializing submodules"
-git submodule update --init
+#echo "Initializing submodules"
+#git submodule update --init
 
 echo "Back-up files to ~/.dotfiles_old"
 mkdir ~/.dotfiles_old
