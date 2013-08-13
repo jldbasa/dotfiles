@@ -29,7 +29,7 @@ plugins=(git rails3 nyan vi-mode bundler)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/sbin:/home/jerome/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/usr/games:~/Github/dotfiles/scripts
+export PATH=/sbin:/home/jerome/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/usr/games:~/src/dotfiles/scripts
 
 source ~/src/dotfiles/zsh/env
 source ~/src/dotfiles/zsh/config
