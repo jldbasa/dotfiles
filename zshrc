@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="af-magic"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -34,3 +34,6 @@ export PATH=/sbin:/home/jerome/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 source ~/src/dotfiles/zsh/env
 source ~/src/dotfiles/zsh/config
 source ~/src/dotfiles/zsh/aliases
+
+LC_CTYPE=en_US.UTF-8
+LC_ALL=en_US.UTF-8

@@ -100,7 +100,7 @@ set laststatus=2                    " Show the status line all the time
 set autoindent
 set smartindent
 
-"set shell=/bin/bash                 " Some commands seem to have problems with zsh"
+set shell=/bin/bash                 " Some commands seem to have problems with zsh"
 
 set wildignore+=vendor,log,tmp,*.swp
 
@@ -136,6 +136,8 @@ if has("autocmd")
    
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
+
+  autocmd BufWritePre *.rb,*.js :call <SID>StripTrailingWhitespaces()
 endif
 
 " +---------------------------------------------------------------------------+
@@ -237,9 +239,9 @@ else
 endif
 
 " Rspec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>f :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
+map <Leader>d :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 
