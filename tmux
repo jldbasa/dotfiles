@@ -21,6 +21,14 @@ set -g history-limit 10000
 # Use vi-mode keys
 setw -g mode-keys vi
 
+# copy and paste mode
+unbind [
+bind Escape copy-mode
+unbind p
+bind p paste-buffer
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+
 # Activity monitoring
 setw -g monitor-activity on
 set -g visual-activity on
@@ -95,3 +103,5 @@ setw -g aggressive-resize on
 # ^2: http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/
 # ^3: http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2/
 # ^4: https://github.com/myusuf3/dotfiles/blob/master/tmux
+# ^5: http://jasonwryan.com/blog/2011/06/07/copy-and-paste-in-tmux/ Copy
+# & Paste
