@@ -24,7 +24,8 @@ ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails3 nyan vi-mode bundler)
+#plugins=(git nyan vi-mode bundler)
+plugins=(git nyan bundler)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,3 +38,5 @@ source ~/src/dotfiles/zsh/aliases
 
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
+
+set -o vi
