@@ -262,7 +262,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
 "powerline settings
-if os != "CYGWIN_NT-6.1-WOW64" && os != "Darwin"
+if os != "CYGWIN_NT-6.1-WOW64"
   let g:Powerline_symbols = 'fancy'
 endif
 
