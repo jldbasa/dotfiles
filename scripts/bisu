@@ -1,0 +1,27 @@
+#! /bin/sh
+case "$1" in
+  add)
+        echo "$2 $3"  >> /etc/hosts
+        ;;
+  remove)
+        sed -ie "\|^$2 $3\$|d" /etc/hosts
+        ;;
+
+  replace)
+        sed -ie "\|^$2 $3\$|d" /etc/hosts
+        echo "$4 $3"  >> /etc/hosts
+        ;;
+
+  *)
+    echo "Usage: "
+    echo "bisu [add|remove|replace] [ip] [hostname]"
+    echo
+    echo "Examples:"
+    echo "bisu add 127.0.0.1 example.com"
+    echo "bisu remove 127.0.0.1 example.com"
+    echo "bisu replace 127.0.0.1 example.com 8.8.8.8"
+        exit 1
+        ;;
+esac
+
+exit 0
