@@ -32,7 +32,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'thoughtbot/vim-rspec'
-
+Bundle 'tpope/vim-rails'
 
 let os = substitute(system('uname'), "\n", "", "")
 set nocompatible
@@ -52,6 +52,7 @@ else
   colorscheme Tomorrow-Night
 end
 
+set tags=./tags;                    " Set the tag file search order
 set number
 set t_Co=256                        " Tell the term has 256 colors
 set showcmd                         " Display incomplete commands.
