@@ -32,12 +32,18 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/sbin:/home/jerome/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/usr/games:~/src/dotfiles/scripts
 
+# recommended by brew doctor
+export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - --no-rehash)"
+
 source ~/src/dotfiles/zsh/env
 source ~/src/dotfiles/zsh/config
 source ~/src/dotfiles/zsh/aliases
 
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
+LANG=en_US.utf8
 
 set -o vi
 export PATH="$HOME/.bin:$PATH"
