@@ -24,15 +24,15 @@ Bundle 'tpope/vim-markdown'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
-Bundle 'ervandew/supertab'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'slack/vim-bufexplorer'
+Bundle 'jlanzarotta/bufexplorer'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-rails'
+Bundle 'jgdavey/tslime.vim'
 
 let os = substitute(system('uname'), "\n", "", "")
 set nocompatible
@@ -271,7 +271,8 @@ endif
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "Rspec.vim
-let g:rspec_command = "!bundle exec rspec {spec}"
+"let g:rspec_command = "!bundle exec rspec {spec}"
+let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
 
 " +---------------------------------------------------------------------------+
 " | Misc                                                                      |
