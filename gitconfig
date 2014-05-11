@@ -16,9 +16,9 @@
   co = checkout
 [apply]
   whitespace = nowarn
-
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
-
 [hub]
-protocol = https
+  protocol = https
+[push]
+  default = tracking
+[branch]
+  autosetuprebase = always
