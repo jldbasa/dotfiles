@@ -17,6 +17,7 @@ mv ~/.vim ~/.dotfiles_old
 mv ~/.vimrc ~/.dotfiles_old
 mv ~/.todo.cfg ~/.dotfiles_old
 mv ~/.zshrc ~/.dotfiles_old
+mv ~/.laptop.local ~/.dotfiles_old
 
 echo "Symlinking files"
 ln -s ~/src/dotfiles/editrc ~/.editrc
@@ -31,5 +32,6 @@ ln -s ~/src/dotfiles/vimrc ~/.vimrc
 ln -s ~/src/dotfiles/tmux ~/.tmux.conf
 ln -s ~/src/dotfiles/todo.cfg ~/.todo.cfg
 ln -s ~/src/dotfiles/zshrc ~/.zshrc
+ln -s ~/src/dotfiles/laptop.local ~/.laptop.local
 
 echo "All done."
