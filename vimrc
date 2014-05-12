@@ -264,7 +264,7 @@ let g:syntastic_auto_loc_list=2
 
 "powerline settings
 if os != "CYGWIN_NT-6.1-WOW64"
-  let g:Powerline_symbols = 'fancy'
+  "let g:Powerline_symbols = 'fancy'
 endif
 
 "ctrlp settings

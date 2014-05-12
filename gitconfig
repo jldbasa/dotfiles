@@ -1,6 +1,10 @@
 [user]
   name = Jerome Basa
-  email = jerome@basa.ph
+  email = jerome@teambanjo.com
+[push]
+  default = tracking
+[branch]
+  autosetuprebase = always
 [color]
   ui = true
 [color "diff"]
