@@ -47,16 +47,25 @@ setw -g mouse-select-window on
 setw -g mouse-select-pane on
 setw -g mouse-resize-pane on
 
+# resize panes using PREFIX H, J, K, L
+bind H resize-pane -L 5
+bind J resize-pane -D 5
+bind K resize-pane -U 5
+bind L resize-pane -R 5
+
+# reload ~/.tmux.conf using PREFIX r
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
 
 # +----------------------------------------------------------------------------+
 # | Binds                                                                      |
 # +----------------------------------------------------------------------------+
 # Bind split
 unbind %
-#bind | split-window -h
-#bind - split-window -v
-bind | set default-path $PWD \; split-window -h\; set default-path ~/
-bind - set default-path $PWD \; split-window -v\; set default-path ~/
+bind | split-window -h
+bind - split-window -v
+#bind | set default-path $PWD \; split-window -h\; set default-path ~/
+#bind - set default-path $PWD \; split-window -v\; set default-path ~/
 
 # Move through panes via hjkl
 bind h select-pane -L
@@ -87,15 +96,17 @@ set -g status-left-length 32
 set -g status-right-length 150
 set -g status-interval 5
 
-#set -g status-right '#[fg=colour245]| %R | %d %b #[fg=colour254,bg=colour234,nobold]#(rdio-current-track-tmux)|#[fg=colour16,bg=colour254,bold] #h '
-#set -g window-status-format "#[fg=white,bg=colour234] #I #W "
-#set -g window-status-current-format "#[fg=colour234,bg=colour39]|#[fg=colour16,bg=colour39,noreverse,bold] #I » #W #[fg=colour39,bg=colour234,nobold]|"
-#set -g default-terminal "screen-256color"
-
-set -g status-right '#[fg=colour245]⮃ %R ⮃ %d %b #[fg=colour254,bg=colour234,nobold]#(rdio-current-track-tmux)⮂#[fg=colour16,bg=colour254,bold] #h '
+set -g status-right '#[fg=colour245]| %R | %d %b #[fg=colour254,bg=colour234,nobold]|#[fg=colour16,bg=colour254,bold] #h '
 set -g window-status-format "#[fg=white,bg=colour234] #I #W "
-set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=colour16,bg=colour39,noreverse,bold] #I ⮁ #W #[fg=colour39,bg=colour234,nobold]⮀"
+set -g status-left '#[fg=colour16,bg=colour254,bold][#S]#[fg=colour254,bg=colour234,nobold]'
+set -g window-status-current-format "#[fg=colour234,bg=colour39]|#[fg=colour16,bg=colour39,noreverse,bold] #I » #W #[fg=colour39,bg=colour234,nobold]|"
 set -g default-terminal "screen-256color"
+
+#set -g status-right '#[fg=colour245]⮃ %R ⮃ %d %b #[fg=colour254,bg=colour234,nobold]⮂#[fg=colour16,bg=colour254,bold] #h '
+#set -g status-left '#[fg=colour16,bg=colour254,bold]#S#[fg=colour254,bg=colour234,nobold]⮀'
+#set -g window-status-format "#[fg=white,bg=colour234] #I #W "
+#set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=colour16,bg=colour39,noreverse,bold] #I ⮁ #W #[fg=colour39,bg=colour234,nobold]⮀"
+#set -g default-terminal "screen-256color"
 
 
 # Rather than constraining window size to the maximum size of any client
@@ -104,13 +115,11 @@ set -g default-terminal "screen-256color"
 setw -g aggressive-resize on
 
 
-
-
-
 # Reference
 # ^1: http://mutelight.org/articles/practical-tmux
 # ^2: http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/
 # ^3: http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2/
 # ^4: https://github.com/myusuf3/dotfiles/blob/master/tmux
 # ^5: http://jasonwryan.com/blog/2011/06/07/copy-and-paste-in-tmux/ Copy
+# ^6: http://zanshin.net/2013/09/05/my-tmux-configuration/
 # & Paste
