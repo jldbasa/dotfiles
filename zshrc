@@ -25,7 +25,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(git nyan vi-mode bundler)
-plugins=(git nyan bundler heroku)
+plugins=(git nyan bundler heroku tmux)
 
 source $ZSH/oh-my-zsh.sh
 
