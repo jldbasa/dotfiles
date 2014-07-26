@@ -38,7 +38,7 @@ let os = substitute(system('uname'), "\n", "", "")
 set nocompatible
 set encoding=utf-8
 
-set list                           " show hidden characters
+set nolist                         " hide hidden characters
 set listchars=tab:▸\ ,eol:¬        " Use the same symbols as TextMate for tabstops and EOLs
 
 set pastetoggle=<f9>

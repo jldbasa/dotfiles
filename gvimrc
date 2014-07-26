@@ -6,5 +6,5 @@ set columns=185
 set cursorline
 set anti
 
-au FocusLost * :wa " Save on losing window focus
+au FocusLost * silent! :wa " Save on losing window focus
 set guifont=Bitstream\ Vera\ Sans\ Mono:h12

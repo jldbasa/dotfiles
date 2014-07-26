@@ -40,16 +40,12 @@ eval "$(rbenv init - --no-rehash)"
 source ~/src/dotfiles/zsh/env
 source ~/src/dotfiles/zsh/config
 source ~/src/dotfiles/zsh/aliases
+source ~/src/dotfiles/zshrc_local
 
-LC_CTYPE=en_US.UTF-8
-LC_ALL=en_US.UTF-8
-LANG=en_US.utf8
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 set -o vi
 export PATH="$HOME/.bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
 
-# recommended by brew doctor
-export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - --no-rehash)"
