@@ -33,6 +33,8 @@ Bundle 'slim-template/vim-slim'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-rails'
 Bundle 'jgdavey/tslime.vim'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 
 let os = substitute(system('uname'), "\n", "", "")
 set nocompatible
