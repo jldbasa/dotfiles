@@ -107,6 +107,9 @@ set shell=/bin/bash                 " Some commands seem to have problems with z
 
 set wildignore+=vendor,log,tmp,*.swp
 
+set splitbelow                      " Split opening
+set splitright
+
 "set vim to handle long lines correctly
 set wrap
 set textwidth=79
@@ -197,6 +200,12 @@ nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f4> :NumbersToggle<CR> 
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
+" move between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
@@ -246,6 +255,9 @@ map <Leader>f :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>d :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+" Let :w!! gain sudo privileges without closing and reopening vim
+cmap w!! w !sudo tee % >/dev/null
 
 
 " +---------------------------------------------------------------------------+
