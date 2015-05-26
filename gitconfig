@@ -15,7 +15,7 @@
   whitespace = red reverse
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-  excludesfile = /opt/boxen/config/git/gitignore
+	excludesfile = /Users/jerome/.gitignore
 [alias]
   co = checkout
 [apply]
@@ -26,3 +26,11 @@
   default = tracking
 [branch]
   autosetuprebase = always
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[github]
+	user = jldbasa

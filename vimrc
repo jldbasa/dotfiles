@@ -8,9 +8,13 @@
 " +---------------------------------------------------------------------------+
 " | VIM Settings                                                              |
 " +---------------------------------------------------------------------------+
+" powerline
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+
 " vundle
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
+
 
 " let Vundle manage Vundle
 " required! 
@@ -25,7 +29,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'myusuf3/numbers.vim'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
@@ -80,7 +83,6 @@ set scrolloff=3                     " Show 3 lines of context around the cursor.
 set linebreak                       " Wrap lines at convenient points
 set formatoptions=tq
 set wrapmargin=4
-set textwidth=120
 "set cursorline
 
 set title                           " Set the terminal's title
@@ -112,14 +114,20 @@ set splitright
 
 "set vim to handle long lines correctly
 set wrap
-set textwidth=79
+set textwidth=120
 set formatoptions=qrn1
-set colorcolumn=85
+set colorcolumn=125
 
 " Source the vimrc file after saving it
 if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
 endif
+
+" Folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         
 
 
 " +---------------------------------------------------------------------------+
@@ -257,7 +265,7 @@ map <Leader>d :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 " Let :w!! gain sudo privileges without closing and reopening vim
-cmap w!! w !sudo tee % >/dev/null
+"cmap w!! w !sudo tee % >/dev/null
 
 
 " +---------------------------------------------------------------------------+
