@@ -15,7 +15,6 @@ set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
-
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/Vundle.vim'
@@ -83,7 +82,6 @@ set scrolloff=3                     " Show 3 lines of context around the cursor.
 set linebreak                       " Wrap lines at convenient points
 set formatoptions=tq
 set wrapmargin=4
-"set cursorline
 
 set title                           " Set the terminal's title
 set visualbell                      " No beeping.
@@ -198,15 +196,16 @@ set laststatus=2
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
 
-
 " +---------------------------------------------------------------------------+
 " | Mappings                                                                  |
 " +---------------------------------------------------------------------------+
-let mapleader=","
+let mapleader = "\<Space>"
 nnoremap <f1> :BufExplorer<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f4> :NumbersToggle<CR> 
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
 
 " move between splits
 nnoremap <C-J> <C-W><C-J>
@@ -263,10 +262,6 @@ map <Leader>f :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>d :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-
-" Let :w!! gain sudo privileges without closing and reopening vim
-"cmap w!! w !sudo tee % >/dev/null
-
 
 " +---------------------------------------------------------------------------+
 " | Plugins Specific Settings                                                 |
