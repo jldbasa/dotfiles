@@ -35,7 +35,6 @@ export PATH=/sbin:/home/jerome/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 # recommended by brew doctor
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init - --no-rehash)"
 
 source ~/src/dotfiles/zsh/env
 source ~/src/dotfiles/zsh/config
@@ -50,7 +49,6 @@ export LC_ALL=en_US.UTF-8
 set -o vi
 
 export PATH="$HOME/.bin:$PATH"
-
 
 export PATH="$PATH:/usr/local/lib/node_modules"
 source $(brew --prefix nvm)/nvm.sh
