@@ -1,0 +1,4 @@
+#!/bin/sh
+ENVNAME="$1*"
+host=`aws ec2 describe-instances --filter Name=tag:Name,Values=$ENVNAME --query 'Reservations[*].Instances[].[PublicDnsName][0][0]'  | tr -d '"'`
+exec ssh ec2-user@${host}
