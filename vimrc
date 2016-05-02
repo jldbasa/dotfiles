@@ -8,9 +8,6 @@
 " +---------------------------------------------------------------------------+
 " | VIM Settings                                                              |
 " +---------------------------------------------------------------------------+
-" powerline
-set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
-
 " vundle
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
@@ -51,7 +48,6 @@ set pastetoggle=<f9>
 " set color scheme
 if has('gui_running')
   colorscheme Tomorrow-Night
-  set guifont=Menlo\ Regular\ for\ Powerline:h12
 else
   colorscheme Tomorrow-Night
 end
@@ -278,11 +274,6 @@ let g:bufExplorerShowRelativePath=1
 "syntastic settings
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
-
-"powerline settings
-if os != "CYGWIN_NT-6.1-WOW64"
-  "let g:Powerline_symbols = 'fancy'
-endif
 
 "ctrlp settings
 set runtimepath^=~/.vim/bundle/ctrlp.vim
