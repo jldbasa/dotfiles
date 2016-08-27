@@ -45,7 +45,7 @@ source ~/src/dotfiles/zshrc_local
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-# export DISABLE_AUTO_TITLE=true
+export DISABLE_AUTO_TITLE=true
 
 # Set to vi mode
 set -o vi
@@ -55,3 +55,6 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$PATH:/usr/local/lib/node_modules"
 source $(brew --prefix nvm)/nvm.sh
 eval "$(rbenv init - zsh --no-rehash)"
+# . /Users/jerome/.nix-profile/etc/profile.d/nix.sh
+
+bindkey "^R" history-incremental-search-backward

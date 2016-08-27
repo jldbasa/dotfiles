@@ -6,6 +6,7 @@ alias x='exit'
 alias agent_smith='eval `ssh-agent`; ssh-add'
 alias format_json='python -mjson.tool'
 alias please='sudo'
+alias mux='tmuxinator'
 
 # Python
 alias runserver='python manage.py runserver'

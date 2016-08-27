@@ -201,6 +201,7 @@ nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f4> :NumbersToggle<CR> 
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>. :CtrlPTag<CR>
 nnoremap <Leader>w :w<CR>
 
 " move between splits
@@ -214,7 +215,6 @@ nmap <leader>l :set list!<CR>
 
 " Open vimrc
 nmap <leader>v :tabedit $MYVIMRC<CR>
-
 
 "clean-up whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>  
@@ -259,6 +259,9 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>d :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+map <leader>c :Tmux bundle exec rubocop --rails --display-cop-names --display-style-guide<CR>
+
+
 " +---------------------------------------------------------------------------+
 " | Plugins Specific Settings                                                 |
 " +---------------------------------------------------------------------------+
@@ -281,6 +284,10 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 "Rspec.vim
 "let g:rspec_command = "!bundle exec rspec {spec}"
 let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
+
+"NERDTree
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
 
 " +---------------------------------------------------------------------------+
 " | Misc                                                                      |
