@@ -284,6 +284,8 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 "Rspec.vim
 "let g:rspec_command = "!bundle exec rspec {spec}"
 let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
+let g:rspec_runner = "os_x_iterm2"
+
 
 "NERDTree
 let g:NERDSpaceDelims = 1
