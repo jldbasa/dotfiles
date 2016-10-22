@@ -47,9 +47,9 @@ set pastetoggle=<f9>
 
 " set color scheme
 if has('gui_running')
-  colorscheme Tomorrow-Night
+  colorscheme Tomorrow
 else
-  colorscheme Tomorrow-Night
+  colorscheme Tomorrow
 end
 
 set tags=./tags;                    " Set the tag file search order
