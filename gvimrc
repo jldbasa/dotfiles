@@ -7,4 +7,4 @@ set cursorline
 set anti
 
 au FocusLost * silent! :wa " Save on losing window focus
-set guifont=PragmataPro:h14
+set guifont=Iosevka\ Term:h14
