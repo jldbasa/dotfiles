@@ -10,30 +10,32 @@
 " +---------------------------------------------------------------------------+
 " vundle
 set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-git'
-Bundle 'msanders/snipmate.vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
-Bundle 'myusuf3/numbers.vim'
-Bundle 'jlanzarotta/bufexplorer'
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'slim-template/vim-slim'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'tpope/vim-rails'
-Bundle 'jgdavey/tslime.vim'
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-git'
+Plugin 'msanders/snipmate.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'slim-template/vim-slim'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-rails'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+
+call vundle#end()
 
 let os = substitute(system('uname'), "\n", "", "")
 set nocompatible
@@ -47,9 +49,9 @@ set pastetoggle=<f9>
 
 " set color scheme
 if has('gui_running')
-  colorscheme Tomorrow
+  colorscheme Tomorrow-Night
 else
-  colorscheme Tomorrow
+  colorscheme Tomorrow-Night
 end
 
 set tags=./tags;                    " Set the tag file search order

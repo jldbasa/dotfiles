@@ -36,7 +36,7 @@ export PATH=/sbin:/home/jerome/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 
-source ~/.bin/tmuxinator.zsh
+# source ~/.bin/tmuxinator.zsh
 source ~/src/dotfiles/zsh/env
 source ~/src/dotfiles/zsh/config
 source ~/src/dotfiles/zsh/aliases
@@ -53,7 +53,7 @@ set -o vi
 export PATH="$HOME/.bin:$PATH"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
-source $(brew --prefix nvm)/nvm.sh
+# source $(brew --prefix nvm)/nvm.sh
 eval "$(rbenv init - zsh --no-rehash)"
 # . /Users/jerome/.nix-profile/etc/profile.d/nix.sh
 
