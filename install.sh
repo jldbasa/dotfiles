@@ -29,6 +29,7 @@ ln -s ~/src/dotfiles/inputrc ~/.inputrc
 # ln -s ~/src/dotfiles/pentadactylrc ~/.pentadactylrc
 ln -s ~/src/dotfiles/vim ~/.vim
 ln -s ~/src/dotfiles/vimrc ~/.vimrc
+ln -s ~/src/dotfiles/vimrc ~/.nvimrc
 ln -s ~/src/dotfiles/tmux ~/.tmux.conf
 # ln -s ~/src/dotfiles/todo.cfg ~/.todo.cfg
 ln -s ~/src/dotfiles/zshrc ~/.zshrc
