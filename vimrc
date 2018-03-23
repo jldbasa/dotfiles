@@ -35,6 +35,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
+Plugin 'fenetikm/falcon'
 
 call vundle#end()
 
@@ -50,9 +51,9 @@ set pastetoggle=<f9>
 
 " set color scheme
 if has('gui_running')
-  colorscheme Tomorrow-Night
+  colorscheme falcon
 else
-  colorscheme Tomorrow-Night
+  colorscheme falcon
 end
 
 set tags=./tags;                    " Set the tag file search order

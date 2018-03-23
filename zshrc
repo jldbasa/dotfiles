@@ -25,7 +25,7 @@ ZSH_THEME="lambdamod"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(git nyan vi-mode bundler)
-plugins=(git nyan bundler heroku tmux git-flow)
+plugins=(git nyan bundler heroku tmux git-flow kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -36,11 +36,17 @@ export PATH=/sbin:/home/jerome/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 
+export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # source ~/.bin/tmuxinator.zsh
 source ~/src/dotfiles/zsh/env
 source ~/src/dotfiles/zsh/config
 source ~/src/dotfiles/zsh/aliases
 source ~/src/dotfiles/zshrc_local
+source ~/src/dotfiles/falcon/2018-03-12_falcon_exa-colors
 
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -48,13 +54,16 @@ export LC_ALL=en_US.UTF-8
 export DISABLE_AUTO_TITLE=true
 
 # Set to vi mode
-set -o vi
+# set -o vi
 
 export PATH="$HOME/.bin:$PATH"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
 # source $(brew --prefix nvm)/nvm.sh
-eval "$(rbenv init - zsh --no-rehash)"
+# eval "$(rbenv init - zsh --no-rehash)"
+eval "$(rbenv init -)"
 # . /Users/jerome/.nix-profile/etc/profile.d/nix.sh
 
 bindkey "^R" history-incremental-search-backward
+export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
+
