@@ -54,7 +54,7 @@ export LC_ALL=en_US.UTF-8
 export DISABLE_AUTO_TITLE=true
 
 # Set to vi mode
-# set -o vi
+set -o vi
 
 export PATH="$HOME/.bin:$PATH"
 
@@ -65,5 +65,9 @@ eval "$(rbenv init -)"
 # . /Users/jerome/.nix-profile/etc/profile.d/nix.sh
 
 bindkey "^R" history-incremental-search-backward
-export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
 
+export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
+export PATH="/Users/jerome/Library/Python/3.6/bin:$PATH"
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
