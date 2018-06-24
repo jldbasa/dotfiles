@@ -35,9 +35,7 @@ ln -s ~/src/dotfiles/tmux ~/.tmux.conf
 ln -s ~/src/dotfiles/zshrc ~/.zshrc
 # ln -s ~/src/dotfiles/laptop.local ~/.laptop.local
 
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-    echo "Installing Vundle.vim - package manager for vim"
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
+echo "Installing Vundle.vim - package manager for vim"
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 echo "All done."
