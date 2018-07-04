@@ -35,8 +35,8 @@ ln -s ~/src/dotfiles/tmux ~/.tmux.conf
 ln -s ~/src/dotfiles/zshrc ~/.zshrc
 # ln -s ~/src/dotfiles/laptop.local ~/.laptop.local
 
-echo "Installing Vundle.vim - package manager for vim"
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+echo "Installing vim-plug - package manager for vim"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Installing exa"
 brew install exa

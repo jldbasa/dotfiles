@@ -8,27 +8,22 @@
 " +---------------------------------------------------------------------------+
 " | VIM Settings                                                              |
 " +---------------------------------------------------------------------------+
-" vundle
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle
-" required! 
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'mileszs/ack.vim'          " search tool
-Plugin 'w0rp/ale'                 " async linting engine
-Plugin 'townk/vim-autoclose'      " complete chars which works in pairs
-Plugin 'jlanzarotta/bufexplorer'  " switch between buffers in vim
-Plugin 'kien/ctrlp.vim'           " search files similar to command-T textmate
-Plugin 'fenetikm/falcon'          " theme
-Plugin 'junegunn/goyo.vim'        " distraction free writing in vim
-Plugin 'scrooloose/nerdtree'      " file system explorer
-Plugin 'myusuf3/numbers.vim'      " display line number (relative or absolute)
-Plugin 'tpope/vim-fugitive'       " git wrapper
-Plugin 'airblade/vim-gitgutter'   " git diff in the gutter
-Plugin 'sheerun/vim-polyglot'     " language pack
-Plugin 'tpope/vim-surround'       " surroundings ([ etc.
+Plug 'mileszs/ack.vim'          " search tool
+Plug 'w0rp/ale'                 " async linting engine
+Plug 'townk/vim-autoclose'      " complete chars which works in pairs
+Plug 'jlanzarotta/bufexplorer'  " switch between buffers in vim
+Plug 'kien/ctrlp.vim'           " search files similar to command-T textmate
+Plug 'fenetikm/falcon'          " theme
+Plug 'junegunn/goyo.vim'        " distraction free writing in vim
+Plug 'scrooloose/nerdcommenter' " comment all the way
+Plug 'scrooloose/nerdtree'      " file system explorer
+Plug 'myusuf3/numbers.vim'      " display line number (relative or absolute)
+Plug 'tpope/vim-fugitive'       " git wrapper
+Plug 'airblade/vim-gitgutter'   " git diff in the gutter
+Plug 'sheerun/vim-polyglot'     " language pack
+Plug 'tpope/vim-surround'       " surroundings ([ etc.
 
 " To evaluate:
 " junegunn/fzf
@@ -38,7 +33,6 @@ Plugin 'tpope/vim-surround'       " surroundings ([ etc.
 " Plugin 'tpope/vim-git'
 " Plugin 'msanders/snipmate.vim'
 " Plugin 'tpope/vim-markdown'
-" Plugin 'scrooloose/nerdcommenter'
 " Plugin 'scrooloose/syntastic'
 " Plugin 'slim-template/vim-slim'
 " Plugin 'thoughtbot/vim-rspec'
@@ -46,8 +40,7 @@ Plugin 'tpope/vim-surround'       " surroundings ([ etc.
 " Plugin 'jgdavey/tslime.vim'
 " Plugin 'mattn/gist-vim'
 " Plugin 'mattn/webapi-vim'
-
-call vundle#end()
+call plug#end()
 
 let os = substitute(system('uname'), "\n", "", "")
 set nocompatible
