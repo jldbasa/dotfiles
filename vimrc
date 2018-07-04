@@ -10,25 +10,26 @@
 " +---------------------------------------------------------------------------+
 call plug#begin('~/.vim/plugged')
 
-Plug 'mileszs/ack.vim'          " search tool
-Plug 'w0rp/ale'                 " async linting engine
-Plug 'townk/vim-autoclose'      " complete chars which works in pairs
-Plug 'jlanzarotta/bufexplorer'  " switch between buffers in vim
-Plug 'kien/ctrlp.vim'           " search files similar to command-T textmate
-Plug 'fenetikm/falcon'          " theme
-Plug 'junegunn/goyo.vim'        " distraction free writing in vim
-Plug 'scrooloose/nerdcommenter' " comment all the way
-Plug 'scrooloose/nerdtree'      " file system explorer
-Plug 'myusuf3/numbers.vim'      " display line number (relative or absolute)
-Plug 'tpope/vim-fugitive'       " git wrapper
+Plug '/usr/local/opt/fzf'       " needed by fzf.vim
 Plug 'airblade/vim-gitgutter'   " git diff in the gutter
+Plug 'fenetikm/falcon'          " theme
+Plug 'jlanzarotta/bufexplorer'  " switch between buffers in vim
+Plug 'junegunn/fzf.vim'         " fzf
+Plug 'junegunn/goyo.vim'        " distraction free writing in vim
+Plug 'junegunn/limelight.vim'   " hyperfocus writing
+Plug 'mileszs/ack.vim'          " search tool
+Plug 'myusuf3/numbers.vim'      " display line number (relative or absolute)
+Plug 'scrooloose/nerdtree'      " file system explorer
 Plug 'sheerun/vim-polyglot'     " language pack
+Plug 'townk/vim-autoclose'      " complete chars which works in pairs
+Plug 'tpope/vim-commentary'     " comment stuff
+Plug 'tpope/vim-fugitive'       " git wrapper
 Plug 'tpope/vim-surround'       " surroundings ([ etc.
+Plug 'w0rp/ale'                 " async linting engine
 
 " To evaluate:
-" junegunn/fzf
 " janko-m/vim-test
-" tpope/vim-commentary
+
 " Plugin 'tpope/vim-rhubarb'
 " Plugin 'tpope/vim-git'
 " Plugin 'msanders/snipmate.vim'
@@ -207,8 +208,6 @@ nnoremap <f1> :BufExplorer<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f4> :NumbersToggle<CR> 
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
-nnoremap <Leader>o :CtrlP<CR>
-nnoremap <Leader>. :CtrlPTag<CR>
 nnoremap <Leader>w :w<CR>
 
 " move between splits
@@ -279,14 +278,11 @@ let g:bufExplorerShowRelativePath=1
 "autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
 "snipMate
-:filetype plugin on
+" :filetype plugin on
 
 "syntastic settings
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
-
-"ctrlp settings
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "Rspec.vim
 "let g:rspec_command = "!bundle exec rspec {spec}"
@@ -302,6 +298,9 @@ let g:ackprg = 'ag --vimgrep'
 "NERDTree
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
+
+"limelight
+let g:limelight_conceal_ctermfg = 'gray'
 
 " +---------------------------------------------------------------------------+
 " | Misc                                                                      |
