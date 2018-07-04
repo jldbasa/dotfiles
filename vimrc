@@ -10,30 +10,34 @@
 " +---------------------------------------------------------------------------+
 " vundle
 set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-git'
-Bundle 'msanders/snipmate.vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
-Bundle 'myusuf3/numbers.vim'
-Bundle 'jlanzarotta/bufexplorer'
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'slim-template/vim-slim'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'tpope/vim-rails'
-Bundle 'jgdavey/tslime.vim'
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-git'
+Plugin 'msanders/snipmate.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'slim-template/vim-slim'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-rails'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'fenetikm/falcon'
+
+call vundle#end()
 
 let os = substitute(system('uname'), "\n", "", "")
 set nocompatible
@@ -47,9 +51,9 @@ set pastetoggle=<f9>
 
 " set color scheme
 if has('gui_running')
-  colorscheme Tomorrow-Night
+  colorscheme falcon
 else
-  colorscheme Tomorrow-Night
+  colorscheme falcon
 end
 
 set tags=./tags;                    " Set the tag file search order
@@ -201,6 +205,7 @@ nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f4> :NumbersToggle<CR> 
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>. :CtrlPTag<CR>
 nnoremap <Leader>w :w<CR>
 
 " move between splits
@@ -214,7 +219,6 @@ nmap <leader>l :set list!<CR>
 
 " Open vimrc
 nmap <leader>v :tabedit $MYVIMRC<CR>
-
 
 "clean-up whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>  
@@ -259,6 +263,9 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>d :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+map <leader>c :Tmux bundle exec rubocop --rails --display-cop-names --display-style-guide<CR>
+
+
 " +---------------------------------------------------------------------------+
 " | Plugins Specific Settings                                                 |
 " +---------------------------------------------------------------------------+
@@ -280,7 +287,18 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "Rspec.vim
 "let g:rspec_command = "!bundle exec rspec {spec}"
-let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
+" let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
+let g:rspec_command = "bundle exec rspec {spec}"
+" let g:rspec_runner = "os_x_iterm2"
+" let g:rspec_runner = "os_x_terminal"
+let g:rspec_runner = "os_x_iterm2"
+
+let g:ackprg = 'ag --vimgrep'
+
+
+"NERDTree
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
 
 " +---------------------------------------------------------------------------+
 " | Misc                                                                      |
