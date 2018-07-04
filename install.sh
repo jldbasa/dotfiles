@@ -38,4 +38,7 @@ ln -s ~/src/dotfiles/zshrc ~/.zshrc
 echo "Installing Vundle.vim - package manager for vim"
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+echo "Installing exa"
+brew install exa
+
 echo "All done."
