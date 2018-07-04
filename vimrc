@@ -16,26 +16,36 @@ call vundle#begin()
 " required! 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-git'
-Plugin 'msanders/snipmate.vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'myusuf3/numbers.vim'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'mileszs/ack.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'slim-template/vim-slim'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-rails'
-Plugin 'jgdavey/tslime.vim'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'fenetikm/falcon'
+Plugin 'mileszs/ack.vim'          " search tool
+Plugin 'w0rp/ale'                 " async linting engine
+Plugin 'townk/vim-autoclose'      " complete chars which works in pairs
+Plugin 'jlanzarotta/bufexplorer'  " switch between buffers in vim
+Plugin 'kien/ctrlp.vim'           " search files similar to command-T textmate
+Plugin 'fenetikm/falcon'          " theme
+Plugin 'junegunn/goyo.vim'        " distraction free writing in vim
+Plugin 'scrooloose/nerdtree'      " file system explorer
+Plugin 'myusuf3/numbers.vim'      " display line number (relative or absolute)
+Plugin 'tpope/vim-fugitive'       " git wrapper
+Plugin 'airblade/vim-gitgutter'   " git diff in the gutter
+Plugin 'sheerun/vim-polyglot'     " language pack
+Plugin 'tpope/vim-surround'       " surroundings ([ etc.
+
+" To evaluate:
+" junegunn/fzf
+" janko-m/vim-test
+" tpope/vim-commentary
+" Plugin 'tpope/vim-rhubarb'
+" Plugin 'tpope/vim-git'
+" Plugin 'msanders/snipmate.vim'
+" Plugin 'tpope/vim-markdown'
+" Plugin 'scrooloose/nerdcommenter'
+" Plugin 'scrooloose/syntastic'
+" Plugin 'slim-template/vim-slim'
+" Plugin 'thoughtbot/vim-rspec'
+" Plugin 'tpope/vim-rails'
+" Plugin 'jgdavey/tslime.vim'
+" Plugin 'mattn/gist-vim'
+" Plugin 'mattn/webapi-vim'
 
 call vundle#end()
 
