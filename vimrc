@@ -24,13 +24,13 @@ Plug 'sheerun/vim-polyglot'     " language pack
 Plug 'townk/vim-autoclose'      " complete chars which works in pairs
 Plug 'tpope/vim-commentary'     " comment stuff
 Plug 'tpope/vim-fugitive'       " git wrapper
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'       " surroundings ([ etc.
 Plug 'w0rp/ale'                 " async linting engine
 
 " To evaluate:
 " janko-m/vim-test
 
-" Plugin 'tpope/vim-rhubarb'
 " Plugin 'tpope/vim-git'
 " Plugin 'msanders/snipmate.vim'
 " Plugin 'tpope/vim-markdown'
