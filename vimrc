@@ -210,6 +210,9 @@ nnoremap <f4> :NumbersToggle<CR>
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <Leader>w :w<CR>
 
+" fzf mappings
+nnoremap <Leader>o :Files<CR>
+
 " move between splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
