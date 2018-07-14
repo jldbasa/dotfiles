@@ -25,6 +25,7 @@ Plug 'tpope/vim-fugitive'       " git wrapper
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'       " surroundings ([ etc.
 Plug 'vim-airline/vim-airline'  " status bar
+Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'                 " async linting engine
 
 " To evaluate:
@@ -58,6 +59,10 @@ if has('gui_running')
 else
   colorscheme falcon
 end
+
+set termguicolors
+let g:falcon_airline = 1
+let g:airline_theme = 'falcon'
 
 set tags=./tags;                    " Set the tag file search order
 set number

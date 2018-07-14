@@ -4,6 +4,7 @@ echo "Back-up exisitng dotfiles to ~/.dotfiles_old"
 
 rm -rf ~/.dotfiles_old
 mkdir ~/.dotfiles_old
+mkdir -p ~/.config/nvim/
 
 mv ~/.editrc ~/.dotfiles_old
 mv ~/.gemrc ~/.dotfiles_old
@@ -29,11 +30,12 @@ ln -s ~/src/dotfiles/inputrc ~/.inputrc
 # ln -s ~/src/dotfiles/pentadactylrc ~/.pentadactylrc
 ln -s ~/src/dotfiles/vim ~/.vim
 ln -s ~/src/dotfiles/vimrc ~/.vimrc
-ln -s ~/src/dotfiles/vimrc ~/.nvimrc
+# ln -s ~/src/dotfiles/vimrc ~/.nvimrc
 ln -s ~/src/dotfiles/tmux ~/.tmux.conf
 # ln -s ~/src/dotfiles/todo.cfg ~/.todo.cfg
 ln -s ~/src/dotfiles/zshrc ~/.zshrc
 # ln -s ~/src/dotfiles/laptop.local ~/.laptop.local
+ln -s ~/src/dotfiles/nvim.vim ~/.config/nvim/init.vim
 
 echo "Installing vim-plug - package manager for vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
