@@ -18,6 +18,7 @@
 	excludesfile = /Users/jerome/.gitignore
 [alias]
   co = checkout
+  br = branch
 [apply]
   whitespace = nowarn
 [hub]

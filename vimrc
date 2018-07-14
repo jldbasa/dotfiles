@@ -13,11 +13,9 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'       " needed by fzf.vim
 Plug 'airblade/vim-gitgutter'   " git diff in the gutter
 Plug 'fenetikm/falcon'          " theme
-Plug 'jlanzarotta/bufexplorer'  " switch between buffers in vim
 Plug 'junegunn/fzf.vim'         " fzf
 Plug 'junegunn/goyo.vim'        " distraction free writing in vim
 Plug 'junegunn/limelight.vim'   " hyperfocus writing
-Plug 'mileszs/ack.vim'          " search tool
 Plug 'myusuf3/numbers.vim'      " display line number (relative or absolute)
 Plug 'scrooloose/nerdtree'      " file system explorer
 Plug 'sheerun/vim-polyglot'     " language pack
@@ -26,6 +24,7 @@ Plug 'tpope/vim-commentary'     " comment stuff
 Plug 'tpope/vim-fugitive'       " git wrapper
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'       " surroundings ([ etc.
+Plug 'vim-airline/vim-airline'  " status bar
 Plug 'w0rp/ale'                 " async linting engine
 
 " To evaluate:
@@ -157,61 +156,23 @@ if has("autocmd")
 endif
 
 " +---------------------------------------------------------------------------+
-" | Status line                                                               |
-" +---------------------------------------------------------------------------+
-set statusline=%f                   "tail of the filename
-
-""display a warning if file encoding isnt utf-8
-set statusline+=%#warningmsg#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
-
-set statusline+=%h                  "help file flag
-set statusline+=%y                  "filetype
-set statusline+=%r                  "read only flag
-set statusline+=%m                  "modified flag
-
-set statusline+=%{fugitive#statusline()}
-
-set statusline+=%#error#
-set statusline+=%{StatuslineTabWarning()}
-set statusline+=%*
-
-set statusline+=%{StatuslineTrailingSpaceWarning()}
-
-set statusline+=%{StatuslineLongLineWarning()}
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-"display a warning if &paste is set
-set statusline+=%#error#
-set statusline+=%{&paste?'[paste]':''}
-set statusline+=%*
-
-set statusline+=%=                  "left/right separator
-set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
-set statusline+=%c,                 "cursor column
-set statusline+=%l/%L               "cursor line/total lines
-set statusline+=\ %P                "percent through file
-set laststatus=2
-
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
-
-
-" +---------------------------------------------------------------------------+
 " | Mappings                                                                  |
 " +---------------------------------------------------------------------------+
 let mapleader = "\<Space>"
-nnoremap <f1> :BufExplorer<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f4> :NumbersToggle<CR> 
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <Leader>w :w<CR>
 
 " fzf mappings
+nnoremap <f1> :Buffers<cr>
 nnoremap <Leader>o :Files<CR>
+nnoremap <silent> <Leader><Leader> :Files<CR>
+nnoremap <Leader>l :Lines<CR>
+" nnoremap <Leader>ag :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>AG :Ag <C-R><C-A><CR>
+xnoremap <silent> <Leader>ag y:Ag <C-R>"<CR>
 
 " move between splits
 nnoremap <C-J> <C-W><C-J>
@@ -220,7 +181,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
+" nmap <leader>l :set list!<CR>
 
 " Open vimrc
 nmap <leader>v :tabedit $MYVIMRC<CR>
@@ -274,9 +235,6 @@ map <leader>c :Tmux bundle exec rubocop --rails --display-cop-names --display-st
 " +---------------------------------------------------------------------------+
 " | Plugins Specific Settings                                                 |
 " +---------------------------------------------------------------------------+
-" bufexplorer - set the relative path. Press "R" to switch to absolute
-let g:bufExplorerShowRelativePath=1
-
 "makegreen - MakeGreen plugin and Ruby RSpec. Uncomment to use.
 "autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
@@ -318,68 +276,6 @@ if has("eval")
   endfunction
 endif
 
-function! StatuslineTabWarning()
-    if !exists("b:statusline_tab_warning")
-        let b:statusline_tab_warning = ''
-
-        if !&modifiable
-            return b:statusline_tab_warning
-        endif
-
-        let tabs = search('^\t', 'nw') != 0
-
-"find spaces that arent used as alignment in the first indent column
-        let spaces = search('^ \{' . &ts . ',}[^\t]', 'nw') != 0
-
-        if tabs && spaces
-            let b:statusline_tab_warning = '[mixed-indenting]'
-        elseif (spaces && !&et) || (tabs && &et)
-            let b:statusline_tab_warning = '[&et]'
-        endif
-    endif
-    return b:statusline_tab_warning
-endfunction
-
-
-function! StatuslineTrailingSpaceWarning()
-    if !exists("b:statusline_trailing_space_warning")
-
-        if !&modifiable
-            let b:statusline_trailing_space_warning = ''
-            return b:statusline_trailing_space_warning
-        endif
-
-        if search('\s\+$', 'nw') != 0
-            let b:statusline_trailing_space_warning = '[\s]'
-        else
-            let b:statusline_trailing_space_warning = ''
-        endif
-    endif
-    return b:statusline_trailing_space_warning
-endfunction
-
-function! StatuslineLongLineWarning()
-    if !exists("b:statusline_long_line_warning")
-
-        if !&modifiable
-            let b:statusline_long_line_warning = ''
-            return b:statusline_long_line_warning
-        endif
-
-        let long_line_lens = s:LongLines()
-
-        if len(long_line_lens) > 0
-            let b:statusline_long_line_warning = "[" .
-                        \ '#' . len(long_line_lens) . "," .
-                        \ 'm' . s:Median(long_line_lens) . "," .
-                        \ '$' . max(long_line_lens) . "]"
-        else
-            let b:statusline_long_line_warning = ""
-        endif
-    endif
-    return b:statusline_long_line_warning
-endfunction
-
 function! s:LongLines()
     let threshold = (&tw ? &tw : 80)
     let spaces = repeat(" ", &ts)
@@ -407,15 +303,6 @@ function! s:Median(nums)
         return nums[i]
     else
         return (nums[l/2] + nums[(l/2)-1]) / 2
-    endif
-endfunction
-
-function! StatuslineCurrentHighlight()
-    let name = synIDattr(synID(line('.'),col('.'),1),'name')
-    if name == ''
-        return ''
-    else
-        return '[' . name . ']'
     endif
 endfunction
 
