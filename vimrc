@@ -13,12 +13,14 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'       " needed by fzf.vim
 Plug 'airblade/vim-gitgutter'   " git diff in the gutter
 Plug 'fenetikm/falcon'          " theme
+Plug 'jgdavey/tslime.vim'       " send text to running tmux buffer
 Plug 'junegunn/fzf.vim'         " fzf
 Plug 'junegunn/goyo.vim'        " distraction free writing in vim
 Plug 'junegunn/limelight.vim'   " hyperfocus writing
 Plug 'myusuf3/numbers.vim'      " display line number (relative or absolute)
 Plug 'scrooloose/nerdtree'      " file system explorer
 Plug 'sheerun/vim-polyglot'     " language pack
+Plug 'thoughtbot/vim-rspec'     " running rspec
 Plug 'townk/vim-autoclose'      " complete chars which works in pairs
 Plug 'tpope/vim-commentary'     " comment stuff
 Plug 'tpope/vim-fugitive'       " git wrapper
@@ -36,9 +38,7 @@ Plug 'w0rp/ale'                 " async linting engine
 " Plugin 'tpope/vim-markdown'
 " Plugin 'scrooloose/syntastic'
 " Plugin 'slim-template/vim-slim'
-" Plugin 'thoughtbot/vim-rspec'
 " Plugin 'tpope/vim-rails'
-" Plugin 'jgdavey/tslime.vim'
 " Plugin 'mattn/gist-vim'
 " Plugin 'mattn/webapi-vim'
 call plug#end()
@@ -62,7 +62,7 @@ end
 
 set termguicolors
 let g:falcon_airline = 1
-let g:airline_theme = 'falcon'
+let g:airline_theme = 'bubblegum'
 
 set tags=./tags;                    " Set the tag file search order
 set number
@@ -252,8 +252,8 @@ let g:syntastic_auto_loc_list=2
 
 "Rspec.vim
 "let g:rspec_command = "!bundle exec rspec {spec}"
-" let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
-let g:rspec_command = "bundle exec rspec {spec}"
+let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
+" let g:rspec_command = "bundle exec rspec {spec}"
 " let g:rspec_runner = "os_x_iterm2"
 " let g:rspec_runner = "os_x_terminal"
 let g:rspec_runner = "os_x_iterm2"
