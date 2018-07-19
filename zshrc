@@ -5,7 +5,25 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="lambdamod"
+#ZSH_THEME="lambdamod"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# prompt settings
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv kubecontext)
+# POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_MODE='awesome-patched'
+# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%{%F{249}%}\u250f"
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%F{249}%}\u2517%{%F{default}%}❯ "
+
+
+
+# vcs
+POWERLEVEL9K_SHOW_CHANGESET=true
+
+# status
+POWERLEVEL9K_STATUS_VERBOSE=false
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
