@@ -22,17 +22,24 @@ set -g history-limit 10000
 setw -g mode-keys vi
 
 # copy and paste mode
+# tmux 2.5 and up?
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+
+# tmux 2.3 and below
+# bind-key -t vi-copy 'v' begin-selection
+# bind-key -t vi-copy 'y' copy-selection
+# bind-key -t vi-copy 'y' copy-pipe "reattach-to-user-namespace pbcopy"
+
+# # Update default binding of `Enter` to also use copy-pipe
+# unbind -t vi-copy Enter
+# bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+
 unbind [
 bind Escape copy-mode
 unbind p
 bind p paste-buffer
-# bind-key -t vi-copy 'v' begin-selection
-#bind-key -t vi-copy 'y' copy-selection
-# bind-key -t vi-copy 'y' copy-pipe "reattach-to-user-namespace pbcopy"
 
-# Update default binding of `Enter` to also use copy-pipe
-# unbind -t vi-copy Enter
-# bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 
 # Activity monitoring
 setw -g monitor-activity on
@@ -49,9 +56,6 @@ bind H resize-pane -L 5
 bind J resize-pane -D 5
 bind K resize-pane -U 5
 bind L resize-pane -R 5
-
-# reload ~/.tmux.conf using PREFIX r
-bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # +----------------------------------------------------------------------------+
 # | Binds                                                                      |
