@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug '/usr/local/opt/fzf'       " needed by fzf.vim
 Plug 'airblade/vim-gitgutter'   " git diff in the gutter
+Plug 'edkolev/tmuxline.vim'     " tmux statusline generator
 Plug 'fenetikm/falcon'          " theme
 Plug 'jgdavey/tslime.vim'       " send text to running tmux buffer
 Plug 'junegunn/fzf.vim'         " fzf
@@ -133,7 +134,7 @@ endif
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
-set foldlevel=1         
+set foldlevel=1
 
 
 " +---------------------------------------------------------------------------+
@@ -143,17 +144,17 @@ set foldlevel=1
 if has("autocmd")
   " Enable file type detection
   filetype on
-   
+
   " Syntax of these languages is fussy over tabs Vs spaces
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-   
+
   " Customisations based on house-style (arbitrary)
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
-   
+
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 
@@ -165,7 +166,7 @@ endif
 " +---------------------------------------------------------------------------+
 let mapleader = "\<Space>"
 nnoremap <f2> :NERDTreeToggle<cr>
-nnoremap <f4> :NumbersToggle<CR> 
+nnoremap <f4> :NumbersToggle<CR>
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <Leader>w :w<CR>
 
@@ -192,7 +193,7 @@ nnoremap <C-H> <C-W><C-H>
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
 "clean-up whitespace
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>  
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 "remap esc with jj
 inoremap jj <ESC>
