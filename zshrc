@@ -9,6 +9,9 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='awesome-patched'
 
+# add new line after prompt
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
 # ZSH_TMUX_AUTOSTART='true'
 
 # # prompt settings
@@ -29,7 +32,9 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%F{249}%}\u2517%{%F{default}%}❯ "
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰─❯ "
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰─❯ "
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="→ "
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$ "
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv history kubecontext)
@@ -75,8 +80,8 @@ POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='236'
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=(git nyan vi-mode bundler)
-plugins=(git nyan bundler heroku tmux git-flow kubectl)
+#plugins=(git vi-mode bundler)
+plugins=(git heroku tmux git-flow kubectl)
 
 source $ZSH/oh-my-zsh.sh
 

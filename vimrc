@@ -172,6 +172,7 @@ nnoremap <Leader>w :w<CR>
 
 " fzf mappings
 nnoremap <f1> :Buffers<cr>
+nnoremap <silent> ;; :Buffers<cr>
 nnoremap <Leader>o :Files<CR>
 nnoremap <silent> <Leader><Leader> :Files<CR>
 nnoremap <Leader>l :Lines<CR>
