@@ -43,4 +43,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 echo "Installing exa"
 brew install exa
 
+echo "Installing zsh powerlevel theme"
+mkdir -p ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
 echo "All done."
