@@ -48,3 +48,5 @@
   untracked = magenta
 [web]
 	browser = open
+[pager]
+	branch = false

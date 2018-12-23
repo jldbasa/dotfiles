@@ -199,6 +199,9 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 "remap esc with jj
 inoremap jj <ESC>
 
+" make Y yank till end of line
+nnoremap Y y$
+
 " tabs
 " For mac users (using the 'apple' key)
 if os == "Darwin"
@@ -269,6 +272,9 @@ let g:NERDTrimTrailingWhitespace = 1
 
 "limelight
 let g:limelight_conceal_ctermfg = 'gray'
+
+"ale
+let g:ale_enabled = 0
 
 " +---------------------------------------------------------------------------+
 " | Misc                                                                      |

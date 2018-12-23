@@ -8,4 +8,5 @@ set anti
 
 au FocusLost * silent! :wa " Save on losing window focus
 " set guifont=Iosevka\ Term:h16
-set guifont=SourceCodePro+Powerline+Awesome\ Regular:h14
+" set guifont=SourceCodePro+Powerline+Awesome\ Regular:h14
+set guifont=PragmataPro:h16
