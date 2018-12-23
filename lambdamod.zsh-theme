@@ -22,9 +22,9 @@ function check_git_prompt_info() {
 
 function get_right_prompt() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
-        echo -n "[$(kubectl config current-context)] $(git_prompt_short_sha)%{$reset_color%}"
+        echo -n "$(kube_ps1) $(git_prompt_short_sha)%{$reset_color%}"
     else
-        echo -n "[$(kubectl config current-context)] %{$reset_color%}"
+        echo -n "$(kube_ps1) %{$reset_color%}"
     fi
 }
 
@@ -56,5 +56,5 @@ ZSH_THEME_GIT_PROMPT_AHEAD=" %{$fg_bold[white]%}^"
 
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
-ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %{$fg_bold[magenta]%}[%{$fg_bold[blue]%}"
-ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$fg_bold[magenta]%}]"
+ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %{$fg[white]%}[%{$fg[blue]%}"
+ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$fg[white]%}]"
