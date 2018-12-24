@@ -1,89 +1,68 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="lambdamod"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='awesome-patched'
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/jerome/.oh-my-zsh"
 
-# add new line after prompt
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="lambdamod"
 
-# ZSH_TMUX_AUTOSTART='true'
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# # prompt settings
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv kubecontext)
-# POWERLEVEL9K_MODE='nerdfont-complete'
-#
-# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%{%F{249}%}\u250f"
-# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%F{249}%}\u2517%{%F{default}%}❯ "
-# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="╭"
-# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰\uF460\uF460\uF460 "
-
-
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
-
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%F{249}%}\u2517%{%F{default}%}❯ "
-# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰─❯ "
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="→ "
-# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$ "
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv history kubecontext)
-
-
-
-# prompt elements settings
-# kubecontext
-POWERLEVEL9K_KUBECONTEXT_BACKGROUND="green"
-POWERLEVEL9K_KUBECONTEXT_FOREGROUND="black"
-
-
-# history
-POWERLEVEL9K_HISTORY_BACKGROUND="green"
-
-# status
-POWERLEVEL9K_STATUS_VERBOSE=false
-
-# vcs
-POWERLEVEL9K_SHOW_CHANGESET=true
-
-# vi_mode
-POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='005'
-POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='236'
-POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='245'
-POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='236'
-
-
-# Set to this to use case-sensitive completion
+# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
-# Uncomment following line if you want to disable colors in ls
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
+# Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=(git vi-mode bundler)
-plugins=(git heroku tmux git-flow kubectl)
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+plugins=(git kube-ps1 heroku tmux git-flow kubectl)
 
 source $ZSH/oh-my-zsh.sh
+
+#PROMPT='$(kube_ps1)'$PROMPT
 
 # Customize to your needs...
 export PATH=/sbin:/home/jerome/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/usr/games:~/src/dotfiles/scripts
@@ -96,6 +75,12 @@ export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# kube-ps1 plugin
+KUBE_PS1_SYMBOL_ENABLE=false
+KUBE_PS1_PREFIX='['
+KUBE_PS1_SUFFIX=']'
+
 
 # source ~/.bin/tmuxinator.zsh
 source ~/src/dotfiles/zsh/env
