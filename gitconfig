@@ -50,3 +50,5 @@
 	browser = open
 [pager]
 	branch = false
+[commit]
+	template = /Users/jerome/.git-commit-template

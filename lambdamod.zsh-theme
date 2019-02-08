@@ -9,33 +9,39 @@ if [[ "$USER" == "root" ]]; then USERCOLOR="red"; else USERCOLOR="green"; fi
 function check_git_prompt_info() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
         if [[ -z $(git_prompt_info) ]]; then
-            echo "%{$fg[blue]%}detached-head%{$reset_color%}) $(git_prompt_status)
-%{$fg[yellow]%}→ "
+            echo "%{$fg[blue]%}detached-head%{$reset_color%}) $(git_prompt_status) $(get_right_prompt)\n%{$fg[yellow]%}→ "
         else
-            echo "$(git_prompt_info) $(git_prompt_status)
-%{$fg_bold[cyan]%}→ "
+            echo "$(git_prompt_info) $(git_prompt_status) $(get_right_prompt)\n%{$fg_bold[cyan]%}→ "
         fi
     else
-        echo "%{$fg_bold[cyan]%}→ "
+        echo "$(get_right_prompt)\n%{$fg_bold[cyan]%}→ "
     fi
 }
 
 function get_right_prompt() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
-        echo -n "$(kube_ps1) $(git_prompt_short_sha)%{$reset_color%}"
+        echo -n "%{$fg_no_bold[magenta]%}[$(kube_ps1)$(git_prompt_short_sha)%{$reset_color%}]"
     else
-        echo -n "$(kube_ps1) %{$reset_color%}"
+        echo -n "%{$fg_no_bold[magenta]%}[$(kube_ps1)%{$reset_color%}]"
     fi
 }
 
+# PROMPT='
+# ${LAMBDA}\
+#  %{$fg_bold[$USERCOLOR]%}%n\
+#  %{$fg_no_bold[magenta]%}$(get_right_prompt)\
+#  %{$fg_no_bold[magenta]%}[%3~]\
+#  $(check_git_prompt_info)\
+# %{$reset_color%}'
+
 PROMPT='
 ${LAMBDA}\
- %{$fg_bold[$USERCOLOR]%}%n\
  %{$fg_no_bold[magenta]%}[%3~]\
  $(check_git_prompt_info)\
 %{$reset_color%}'
 
-RPROMPT='$(get_right_prompt)'
+# RPROMPT='$(get_right_prompt)'
+RPROMPT=''
 
 # Format for git_prompt_info()
 ZSH_THEME_GIT_PROMPT_PREFIX="at %{$fg[blue]%} "
@@ -56,5 +62,7 @@ ZSH_THEME_GIT_PROMPT_AHEAD=" %{$fg_bold[white]%}^"
 
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
-ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %{$fg[white]%}[%{$fg[blue]%}"
-ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$fg[white]%}]"
+# ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %{$fg[blue]%}[%{$fg[blue]%}"
+# ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$fg[blue]%}]"
+ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %{$fg[blue]%}%{$fg[blue]%}"
+ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$fg[blue]%}"

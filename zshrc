@@ -58,7 +58,7 @@ ZSH_THEME="lambdamod"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git kube-ps1 heroku tmux git-flow kubectl)
+plugins=(git git-flow heroku hub kube-ps1 kubectl tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,8 +78,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # kube-ps1 plugin
 KUBE_PS1_SYMBOL_ENABLE=false
-KUBE_PS1_PREFIX='['
-KUBE_PS1_SUFFIX=']'
+KUBE_PS1_PREFIX=''
+KUBE_PS1_SUFFIX=''
 
 
 # source ~/.bin/tmuxinator.zsh
@@ -113,4 +113,8 @@ export PATH="/Users/jerome/Library/Python/3.6/bin:$PATH"
 
 export PATH="$HOME/.jenv/bin:$PATH"
 
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# z
+. /usr/local/etc/profile.d/z.sh
