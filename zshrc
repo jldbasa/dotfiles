@@ -58,7 +58,7 @@ ZSH_THEME="lambdamod"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git git-flow heroku hub kube-ps1 kubectl tmux)
+plugins=(git git-flow heroku hub kube-ps1 kubectl tmux web-search taskwarrior)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,6 +112,9 @@ export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
 export PATH="/Users/jerome/Library/Python/3.6/bin:$PATH"
 
 export PATH="$HOME/.jenv/bin:$PATH"
+
+# thefuck
+eval $(thefuck --alias)
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

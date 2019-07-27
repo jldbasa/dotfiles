@@ -28,15 +28,8 @@ alias grbm='git rebase master'
 alias grbid='git rebase -i develop'
 alias grbim='git rebase -i master'
 
-# Vmail
-alias vml='rvm --create use ruby-1.9.3@vmail; vmail'
-
-# Todo.txt
-alias t="todo.sh -d ~/.todo.cfg"
-
 # functions
 ## get k8s pod name
 podname() {
   kgp | grep $1 | awk '{print $1}'
 }
-

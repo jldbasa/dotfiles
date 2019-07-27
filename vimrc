@@ -165,13 +165,13 @@ endif
 " | Mappings                                                                  |
 " +---------------------------------------------------------------------------+
 let mapleader = "\<Space>"
-nnoremap <f2> :NERDTreeToggle<cr>
+nnoremap <f1> :NERDTreeToggle<cr>
 nnoremap <f4> :NumbersToggle<CR>
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <Leader>w :w<CR>
 
 " fzf mappings
-nnoremap <f1> :Buffers<cr>
+" nnoremap <f1> :Buffers<cr>
 nnoremap <silent> ;; :Buffers<cr>
 nnoremap <Leader>o :Files<CR>
 nnoremap <silent> <Leader><Leader> :Files<CR>
