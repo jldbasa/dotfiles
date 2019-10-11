@@ -56,9 +56,9 @@ set pastetoggle=<f9>
 
 " set color scheme
 if has('gui_running')
-  colorscheme falcon
+  colorscheme Tomorrow-Night
 else
-  colorscheme falcon
+  colorscheme Tomorrow-Night
 end
 
 set termguicolors

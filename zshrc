@@ -9,7 +9,27 @@ export ZSH="/Users/jerome/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="lambdamod"
+# ZSH_THEME="lambdamod"
+#POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_MODE='nerdfont-complete'
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+
+## Powerlevel9k Settings
+POWERLEVEL9K_HISTORY_BACKGROUND='green'
+
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=" %F{yellow}❯%f "
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs kubecontext )
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history vi_mode)
+
+POWERLEVEL9K_SHOW_CHANGESET=true
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

@@ -8,7 +8,8 @@ set cursorline
 
 au FocusLost * silent! :wa " Save on losing window focus
 " set macligatures
-set guifont=Fira\ Code:h14
+" set guifont=Fira\ Code:h16
 " set guifont=Iosevka\ Term:h16
-" set guifont=SourceCodePro+Powerline+Awesome\ Regular:h14
+" set guifont=SourceCodePro+Powerline+Awesome\ Regular:h16
+set guifont=FiraCode\ Nerd\ Font:h15
 " set guifont=PragmataPro:h16
