@@ -1,7 +1,6 @@
 # +----------------------------------------------------------------------------+
 # | Setttings                                                                  |
 # +----------------------------------------------------------------------------+
-
 # C-b is not acceptable -- Vim uses it
 set-option -g prefix C-a
 bind-key C-a last-window
@@ -99,46 +98,46 @@ set-option -g bell-action none
 # http://jonasjacek.github.io/colors/
 set -g default-terminal "screen-256color"
 
-# Modes
-setw -g clock-mode-colour colour135
-setw -g mode-attr bold
-setw -g mode-fg colour022
-setw -g mode-bg colour250
+# # Modes
+# setw -g clock-mode-colour colour135
+# setw -g mode-attr bold
+# setw -g mode-fg colour022
+# setw -g mode-bg colour250
 
-# Panes
-set -g pane-border-bg colour231
-set -g pane-border-fg colour253
-set -g pane-active-border-bg colour231
-set -g pane-active-border-fg colour253
+# # Panes
+# set -g pane-border-bg colour231
+# set -g pane-border-fg colour253
+# set -g pane-active-border-bg colour231
+# set -g pane-active-border-fg colour253
 
-# Status bar
-set -g status-position bottom
-set -g status-bg colour250
-set -g status-fg colour8
-set -g status-attr dim
-set -g status-left '[#S]'
-set -g status-right-length 60
-set -g status-right "#[fg=colour233]#S #I:#P #[fg=colour233]· %d %b %Y #[fg=colour233]·%l:%M %p "
-set -g status-left-length 100
+# # Status bar
+# set -g status-position bottom
+# set -g status-bg colour250
+# set -g status-fg colour8
+# set -g status-attr dim
+# set -g status-left '[#S]'
+# set -g status-right-length 60
+# set -g status-right "#[fg=colour233]#S #I:#P #[fg=colour233]· %d %b %Y #[fg=colour233]·%l:%M %p "
+# set -g status-left-length 100
 
-setw -g window-status-current-fg colour233
-setw -g window-status-current-bg colour249
-setw -g window-status-current-attr bold
-setw -g window-status-current-format ' #I#[fg=colour233]:#[fg=colour233]#W#[fg=colour1]#F '
+# setw -g window-status-current-fg colour233
+# setw -g window-status-current-bg colour249
+# setw -g window-status-current-attr bold
+# setw -g window-status-current-format ' #I#[fg=colour233]:#[fg=colour233]#W#[fg=colour1]#F '
 
-setw -g window-status-fg colour240
-setw -g window-status-bg colour250
-setw -g window-status-attr none
-setw -g window-status-format ' #I#[fg=colour240]:#[fg=colour240]#W#[fg=colour240]#F '
+# setw -g window-status-fg colour240
+# setw -g window-status-bg colour250
+# setw -g window-status-attr none
+# setw -g window-status-format ' #I#[fg=colour240]:#[fg=colour240]#W#[fg=colour240]#F '
 
-setw -g window-status-bell-attr bold
-setw -g window-status-bell-fg colour255
-setw -g window-status-bell-bg colour1
+# setw -g window-status-bell-attr bold
+# setw -g window-status-bell-fg colour255
+# setw -g window-status-bell-bg colour1
 
-# Messages
-set -g message-attr bold
-set -g message-fg colour15
-set -g message-bg colour64
+# # Messages
+# set -g message-attr bold
+# set -g message-fg colour15
+# set -g message-bg colour64
 
 # Reference
 # ^1: http://mutelight.org/articles/practical-tmux

@@ -1,5 +1,5 @@
 " +---------------------------------------------------------------------------+
-" | .vimrc file - Jerome Lemuel Basa <jerome@basa.ph>                         |
+" | .vimrc file - Jerome Basa <jeromebasa@gmail.com>                          |
 " |                                                                           |
 " | Disclaimer:                                                               |
 " | I just copied most of these stuff, so credits goes to them                |
@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'       " needed by fzf.vim
 Plug 'airblade/vim-gitgutter'   " git diff in the gutter
 Plug 'edkolev/tmuxline.vim'     " tmux statusline generator
+Plug 'edkolev/promptline.vim'
 Plug 'fenetikm/falcon'          " theme
 Plug 'jgdavey/tslime.vim'       " send text to running tmux buffer
 Plug 'junegunn/fzf.vim'         " fzf
@@ -44,6 +45,14 @@ Plug 'w0rp/ale'                 " async linting engine
 " Plugin 'mattn/webapi-vim'
 call plug#end()
 
+" Promptline
+" sections (a, b, c, x, y, z, warn) are optional
+" let g:promptline_preset = {
+"         \'a' : [ promptline#slices#cwd() ],
+"         \'warn' : [ promptline#slices#last_exit_code() ]}
+let g:promptline_preset = { 
+          \'a' : [ promptline#slices#cwd(), promptline#slices#git_status(), promptline#slices#vcs_branch(), '$(kubectl config current-context)', promptline#slices#last_exit_code()]}
+
 let os = substitute(system('uname'), "\n", "", "")
 set nocompatible
 set encoding=utf-8
@@ -56,14 +65,16 @@ set pastetoggle=<f9>
 
 " set color scheme
 if has('gui_running')
-  colorscheme Tomorrow-Night
+  " colorscheme Tomorrow-Night
+  colorscheme falcon
 else
-  colorscheme Tomorrow-Night
+  " colorscheme Tomorrow-Night
+  colorscheme falcon
 end
 
-set termguicolors
+" set termguicolors
 let g:falcon_airline = 1
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'minimalist'
 
 set tags=./tags;                    " Set the tag file search order
 set number
@@ -126,9 +137,9 @@ set formatoptions=qrn1
 set colorcolumn=125
 
 " Source the vimrc file after saving it
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-endif
+" if has("autocmd")
+"   autocmd bufwritepost .vimrc source $MYVIMRC
+" endif
 
 " Folding settings
 set foldmethod=indent   "fold based on indent

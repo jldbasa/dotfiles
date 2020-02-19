@@ -40,8 +40,14 @@ ln -s ~/src/dotfiles/nvim.vim ~/.config/nvim/init.vim
 echo "Installing vim-plug - package manager for vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+echo "Installing bat"
+brew install bat
+
 echo "Installing exa"
 brew install exa
+
+echo "Installing tmux"
+brew install tmux
 
 echo "Installing zsh powerlevel theme"
 mkdir -p ~/.oh-my-zsh/custom/themes/powerlevel9k

@@ -10,26 +10,8 @@ export ZSH="/Users/jerome/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="lambdamod"
-#POWERLEVEL9K_MODE='awesome-patched'
-POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
-
-## Powerlevel9k Settings
-POWERLEVEL9K_HISTORY_BACKGROUND='green'
-
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
-
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=" %F{yellow}❯%f "
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs kubecontext )
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history vi_mode)
-
-POWERLEVEL9K_SHOW_CHANGESET=true
+#source ~/.promptline.sh
+ZSH_THEME=powerlevel10k/powerlevel10k
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -78,7 +60,7 @@ POWERLEVEL9K_SHOW_CHANGESET=true
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git git-flow heroku hub kube-ps1 kubectl tmux web-search taskwarrior)
+plugins=(git git-flow fzf heroku kube-ps1 kubectl tmux web-search taskwarrior)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,14 +99,13 @@ export DISABLE_AUTO_TITLE=true
 # Set to vi mode
 set -o vi
 
-export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
 # source $(brew --prefix nvm)/nvm.sh
 # eval "$(rbenv init - zsh --no-rehash)"
 eval "$(rbenv init -)"
 # . /Users/jerome/.nix-profile/etc/profile.d/nix.sh
-# eval "$(jenv init -)"
 
 bindkey "^R" history-incremental-search-backward
 
@@ -132,12 +113,18 @@ export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
 export PATH="/Users/jerome/Library/Python/3.6/bin:$PATH"
 
 export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# byobu
+export BYOBU_PREFIX=/usr/local
 
 # thefuck
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # z
 . /usr/local/etc/profile.d/z.sh
+
+# ZLE_RPROMPT_INDENT=0
