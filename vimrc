@@ -31,6 +31,7 @@ Plug 'tpope/vim-surround'       " surroundings ([ etc.
 Plug 'vim-airline/vim-airline'  " status bar
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'                 " async linting engine
+Plug 'cormacrelf/vim-colors-github'
 
 " To evaluate:
 " janko-m/vim-test
@@ -50,8 +51,8 @@ call plug#end()
 " let g:promptline_preset = {
 "         \'a' : [ promptline#slices#cwd() ],
 "         \'warn' : [ promptline#slices#last_exit_code() ]}
-let g:promptline_preset = { 
-          \'a' : [ promptline#slices#cwd(), promptline#slices#git_status(), promptline#slices#vcs_branch(), '$(kubectl config current-context)', promptline#slices#last_exit_code()]}
+" let g:promptline_preset = { 
+"           \'a' : [ promptline#slices#cwd(), promptline#slices#git_status(), promptline#slices#vcs_branch(), '$(kubectl config current-context)', promptline#slices#last_exit_code()]}
 
 let os = substitute(system('uname'), "\n", "", "")
 set nocompatible
@@ -67,14 +68,17 @@ set pastetoggle=<f9>
 if has('gui_running')
   " colorscheme Tomorrow-Night
   colorscheme falcon
+  " colorscheme github
 else
   " colorscheme Tomorrow-Night
   colorscheme falcon
+  " colorscheme github
 end
 
 " set termguicolors
 let g:falcon_airline = 1
-let g:airline_theme = 'minimalist'
+" let g:airline_theme = 'minimalist'
+let g:airline_theme = 'github'
 
 set tags=./tags;                    " Set the tag file search order
 set number
