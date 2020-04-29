@@ -36,6 +36,8 @@ ln -s ~/src/dotfiles/tmux ~/.tmux.conf
 ln -s ~/src/dotfiles/zshrc ~/.zshrc
 # ln -s ~/src/dotfiles/laptop.local ~/.laptop.local
 ln -s ~/src/dotfiles/nvim.vim ~/.config/nvim/init.vim
+echo "Symlinking p10k.zsh"
+ln -s ~/iCloud\ Drive/_settings/home/_p10k.zsh .p10k.zsh
 
 echo "Installing vim-plug - package manager for vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
