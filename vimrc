@@ -14,12 +14,13 @@ Plug '/usr/local/opt/fzf'       " needed by fzf.vim
 Plug 'airblade/vim-gitgutter'   " git diff in the gutter
 Plug 'edkolev/tmuxline.vim'     " tmux statusline generator
 Plug 'edkolev/promptline.vim'
-Plug 'fenetikm/falcon'          " theme
+" Plug 'fenetikm/falcon'          " theme
 Plug 'jgdavey/tslime.vim'       " send text to running tmux buffer
 Plug 'junegunn/fzf.vim'         " fzf
 Plug 'junegunn/goyo.vim'        " distraction free writing in vim
 Plug 'junegunn/limelight.vim'   " hyperfocus writing
 Plug 'myusuf3/numbers.vim'      " display line number (relative or absolute)
+Plug 'NLKNguyen/papercolor-theme' "theme
 Plug 'scrooloose/nerdtree'      " file system explorer
 Plug 'sheerun/vim-polyglot'     " language pack
 Plug 'thoughtbot/vim-rspec'     " running rspec
@@ -67,24 +68,27 @@ set pastetoggle=<f9>
 " set color scheme
 if has('gui_running')
   " colorscheme Tomorrow-Night
-  colorscheme falcon
+  " colorscheme falcon
   " colorscheme github
+  colorscheme PaperColor
 else
   " colorscheme Tomorrow-Night
-  colorscheme falcon
+  " colorscheme falcon
   " colorscheme github
+  colorscheme PaperColor
 end
 
 " set termguicolors
 let g:falcon_airline = 1
 " let g:airline_theme = 'minimalist'
-let g:airline_theme = 'github'
+let g:airline_theme='papercolor'
 
 set tags=./tags;                    " Set the tag file search order
 set number
 set t_Co=256                        " Tell the term has 256 colors
 set showcmd                         " Display incomplete commands.
 set showmode                        " Display the mode you're in.
+set background=light
 
 set backspace=indent,eol,start      " Intuitive backspacing.
 

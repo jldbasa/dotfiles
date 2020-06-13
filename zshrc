@@ -89,7 +89,7 @@ source ~/src/dotfiles/zsh/env
 source ~/src/dotfiles/zsh/config
 source ~/src/dotfiles/zsh/aliases
 source ~/src/dotfiles/zshrc_local
-source ~/src/dotfiles/falcon/2018-03-12_falcon_exa-colors
+# source ~/src/dotfiles/falcon/2018-03-12_falcon_exa-colors
 
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
