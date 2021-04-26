@@ -14,13 +14,14 @@ Plug '/usr/local/opt/fzf'       " needed by fzf.vim
 Plug 'airblade/vim-gitgutter'   " git diff in the gutter
 Plug 'edkolev/tmuxline.vim'     " tmux statusline generator
 Plug 'edkolev/promptline.vim'
-" Plug 'fenetikm/falcon'          " theme
+Plug 'fenetikm/falcon'          " theme
 Plug 'jgdavey/tslime.vim'       " send text to running tmux buffer
 Plug 'junegunn/fzf.vim'         " fzf
 Plug 'junegunn/goyo.vim'        " distraction free writing in vim
 Plug 'junegunn/limelight.vim'   " hyperfocus writing
+Plug 'junegunn/vim-easy-align'
 Plug 'myusuf3/numbers.vim'      " display line number (relative or absolute)
-Plug 'NLKNguyen/papercolor-theme' "theme
+" Plug 'NLKNguyen/papercolor-theme' "theme
 Plug 'scrooloose/nerdtree'      " file system explorer
 Plug 'sheerun/vim-polyglot'     " language pack
 Plug 'thoughtbot/vim-rspec'     " running rspec
@@ -31,8 +32,10 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'       " surroundings ([ etc.
 Plug 'vim-airline/vim-airline'  " status bar
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'                 " async linting engine
 Plug 'cormacrelf/vim-colors-github'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " To evaluate:
 " janko-m/vim-test
@@ -67,21 +70,20 @@ set pastetoggle=<f9>
 
 " set color scheme
 if has('gui_running')
-  " colorscheme Tomorrow-Night
-  " colorscheme falcon
+  " colorscheme Tomorrow-Night-Eighties
+  colorscheme falcon
   " colorscheme github
-  colorscheme PaperColor
+  " colorscheme PaperColor
 else
-  " colorscheme Tomorrow-Night
-  " colorscheme falcon
+  " colorscheme Tomorrow-Night-Eighties
+  colorscheme falcon
   " colorscheme github
-  colorscheme PaperColor
+  " colorscheme PaperColor
 end
 
-" set termguicolors
+set termguicolors
 let g:falcon_airline = 1
-" let g:airline_theme = 'minimalist'
-let g:airline_theme='papercolor'
+let g:airline_theme='falcon'
 
 set tags=./tags;                    " Set the tag file search order
 set number
@@ -113,7 +115,7 @@ set wrapmargin=4
 
 set title                           " Set the terminal's title
 set visualbell                      " No beeping.
-syntax enable                       " Turn on syntax highlighting
+syntax on                           " Turn on syntax highlighting
 
 set noswapfile                      " Don't create swapfile
 set nobackup                        " Don't make a backup before overwriting a file.
@@ -143,6 +145,8 @@ set wrap
 set textwidth=120
 set formatoptions=qrn1
 set colorcolumn=125
+
+filetype plugin on
 
 " Source the vimrc file after saving it
 " if has("autocmd")
@@ -178,6 +182,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 
   autocmd BufWritePre *.rb,*.js :call <SID>StripTrailingWhitespaces()
+
 endif
 
 " +---------------------------------------------------------------------------+
@@ -267,8 +272,13 @@ map <leader>c :Tmux bundle exec rubocop --rails --display-cop-names --display-st
 "makegreen - MakeGreen plugin and Ruby RSpec. Uncomment to use.
 "autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
-"snipMate
-" :filetype plugin on
+
+" Vim Wiki
+let g:vimwiki_list = [{'path': '~/Documents/wiki/', 'syntax': 'markdown'}]
+au FileType vimwiki setlocal shiftwidth=6 tabstop=6 noexpandtab
+
+" Align GitHub-flavored Markdown tables
+au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
 "syntastic settings
 let g:syntastic_enable_signs=1

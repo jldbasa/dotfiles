@@ -12,9 +12,10 @@ alias jproxy='ssh -C2qTnN -L 8080:localhost:2020 vps_jerome'
 # alias ls='exa'
 alias mux='tmuxinator'
 alias please='sudo'
-alias tmux='TERM=xterm-256color \tmux' # https://unix.stackexchange.com/questions/1045/getting-256-colors-to-work-in-tmux
+# alias tmux='TERM=xterm-256color \tmux' # https://unix.stackexchange.com/questions/1045/getting-256-colors-to-work-in-tmux
 alias x='exit'
 alias v='nvim'
+alias gsutil='noglob gsutil'
 
 # Python
 alias runserver='python manage.py runserver'

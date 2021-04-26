@@ -85,6 +85,19 @@ bind-key a send-prefix
 # client connected to *that window*. Much more reasonable.
 setw -g aggressive-resize on
 
+bind-key -n F2 new-window
+bind-key -n F3 previous-window
+bind-key -n F4 next-window
+bind-key -n F5 split-window -v
+bind-key -n F6 split-window -h
+bind-key -n F8 command-prompt -I "#W" "rename-window '%%'"
+bind-key -n F7 command-prompt "find-window '%%'"
+bind-key -n F10 setw synchronize-panes
+bind-key -n F11 resize-pane -Z
+bind-key -n F12 kill-pane
+
+bind r source-file ~/.tmux.conf \; display "Tmux Reloaded"
+
 # +----------------------------------------------------------------------------+
 # | Design                                                                     |
 # +----------------------------------------------------------------------------+
@@ -97,47 +110,6 @@ set-option -g bell-action none
 # https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
 # http://jonasjacek.github.io/colors/
 set -g default-terminal "screen-256color"
-
-# # Modes
-# setw -g clock-mode-colour colour135
-# setw -g mode-attr bold
-# setw -g mode-fg colour022
-# setw -g mode-bg colour250
-
-# # Panes
-# set -g pane-border-bg colour231
-# set -g pane-border-fg colour253
-# set -g pane-active-border-bg colour231
-# set -g pane-active-border-fg colour253
-
-# # Status bar
-# set -g status-position bottom
-# set -g status-bg colour250
-# set -g status-fg colour8
-# set -g status-attr dim
-# set -g status-left '[#S]'
-# set -g status-right-length 60
-# set -g status-right "#[fg=colour233]#S #I:#P #[fg=colour233]· %d %b %Y #[fg=colour233]·%l:%M %p "
-# set -g status-left-length 100
-
-# setw -g window-status-current-fg colour233
-# setw -g window-status-current-bg colour249
-# setw -g window-status-current-attr bold
-# setw -g window-status-current-format ' #I#[fg=colour233]:#[fg=colour233]#W#[fg=colour1]#F '
-
-# setw -g window-status-fg colour240
-# setw -g window-status-bg colour250
-# setw -g window-status-attr none
-# setw -g window-status-format ' #I#[fg=colour240]:#[fg=colour240]#W#[fg=colour240]#F '
-
-# setw -g window-status-bell-attr bold
-# setw -g window-status-bell-fg colour255
-# setw -g window-status-bell-bg colour1
-
-# # Messages
-# set -g message-attr bold
-# set -g message-fg colour15
-# set -g message-bg colour64
 
 # Reference
 # ^1: http://mutelight.org/articles/practical-tmux
