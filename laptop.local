@@ -1,5 +1,0 @@
-#!/bin/sh
-
-brew install git-flow
-brew install mysql
-brew install pow
