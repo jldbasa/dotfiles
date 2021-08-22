@@ -139,7 +139,7 @@ export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 export PATH="/usr/local/opt/redis@4.0/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
-. /usr/local/opt/asdf/asdf.sh
+. /usr/local/opt/asdf/libexec/asdf.sh
 # export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 # gcloud
