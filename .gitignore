@@ -3,6 +3,7 @@
 tags
 .idea/
 .powrc
+.zshrc
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

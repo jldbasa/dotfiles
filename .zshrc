@@ -1,1 +1,1 @@
-.zshrc-ubuntu
+.zshrc-osx
