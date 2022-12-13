@@ -9,12 +9,15 @@ kops 1.11.1
 kubectl 1.21.14
 kubectx 0.9.1
 nodejs 16.6.1
-postgres 12.9
+pluto 5.11.1
+postgres 14.4
 python 3.10.1
 redis 4.0.0
 ruby 3.1.0
 stern 1.20.1
+telepresence 2.9.2
 terraform 0.12.29
 terragrunt 0.23.40
 vault 1.9.3+ent
 yq 4.20.2
+golang 1.15.10
