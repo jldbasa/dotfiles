@@ -93,6 +93,9 @@ export PATH="/usr/local/opt/helm@2/bin:$PATH"
 # helm@2
 export PATH="$HOME/bin:$PATH"
 
+# gcloud
+export PATH="${PATH}:${HOME}/.asdf/installs/gcloud/436.0.0/bin"
+
 # krew
 export PATH="${PATH}:${HOME}/.krew/bin"
 
@@ -143,9 +146,11 @@ export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 # export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 # gcloud
-export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+# export CLOUDSDK_PYTHON="/usr/local/bin/python"
+export CLOUDSDK_PYTHON="/Users/jerome/.asdf/shims/python3"
+# source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+# source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # rbenv
 eval "$(rbenv init - zsh)"
@@ -160,3 +165,7 @@ eval "$(rbenv init - zsh)"
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
+
+# java
+export JAVA_HOME='/Users/jerome/.asdf/shims/'
+export PATH="${PATH}:${JAVA_HOME}"
