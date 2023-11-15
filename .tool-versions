@@ -1,4 +1,4 @@
-argocd 2.3.17
+argocd 2.5.22
 cloudsql-proxy 1.23.1
 cmctl 1.11.0
 cockroach 21.1.11
@@ -32,3 +32,4 @@ terraform 0.12.29
 terragrunt 0.23.40
 vault 1.13.2
 yq 4.20.2
+ripgrep 13.0.0
