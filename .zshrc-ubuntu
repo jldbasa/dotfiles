@@ -1,5 +1,9 @@
 set -o vi
 
+export PATH="/home/jerome/.asdf/installs/gcloud/436.0.0/bin:$PATH"
+
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 export FZF_BASE="/home/jerome/.asdf/installs/fzf/0.29.0"
 
 # If you come from bash you might have to change your $PATH.
