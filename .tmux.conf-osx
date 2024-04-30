@@ -5,7 +5,11 @@ set -g mouse on
 
 unbind C-b
 set -g prefix C-a
-bind C-a send-prefix
+# bind C-a send-prefix
+bind-key C-a last-window
+
+# Allows for faster key repetition
+set -s escape-time 0
 
 # Vim style pane selection
 bind h select-pane -L
@@ -33,13 +37,30 @@ bind -n S-Right next-window
 bind -n M-H previous-window
 bind -n M-L next-window
 
-set -g @catppuccin_flavour 'mocha'
-
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @plugin 'dreamsofcode-io/catppuccin-tmux'
+# set -g @plugin 'catppuccin/tmux'
 set -g @plugin 'tmux-plugins/tmux-yank'
+
+# catppuccin
+set -g @catppuccin_window_right_separator "█ "
+set -g @catppuccin_window_number_position "right"
+set -g @catppuccin_window_middle_separator " | "
+
+set -g @catppuccin_window_default_fill "none"
+
+set -g @catppuccin_window_current_fill "all"
+
+set -g @catppuccin_status_modules_right "application session user host date_time"
+set -g @catppuccin_status_left_separator "█"
+set -g @catppuccin_status_right_separator "█"
+
+set -g @catppuccin_date_time_text "%Y-%m-%d %H:%M:%S"
+
+set -g @catppuccin_flavour 'mocha'
+
 
 run '~/.tmux/plugins/tpm/tpm'
 
