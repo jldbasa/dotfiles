@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug '/usr/local/opt/fzf'       " needed by fzf.vim
 Plug 'airblade/vim-gitgutter'   " git diff in the gutter
-Plug 'edkolev/tmuxline.vim'     " tmux statusline generator
+" Plug 'edkolev/tmuxline.vim'     " tmux statusline generator
 Plug 'edkolev/promptline.vim'
 Plug 'fenetikm/falcon'          " theme
 Plug 'jgdavey/tslime.vim'       " send text to running tmux buffer
