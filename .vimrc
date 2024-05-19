@@ -35,6 +35,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'                 " async linting engine
 Plug 'cormacrelf/vim-colors-github'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' } " theme
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " To evaluate:
@@ -71,12 +72,12 @@ set pastetoggle=<f9>
 " set color scheme
 if has('gui_running')
   " colorscheme Tomorrow-Night-Eighties
-  colorscheme falcon
+  colorscheme catppuccin_mocha
   " colorscheme github
   " colorscheme PaperColor
 else
   " colorscheme Tomorrow-Night-Eighties
-  colorscheme falcon
+  colorscheme catppuccin_mocha
   " colorscheme github
   " colorscheme PaperColor
 end
