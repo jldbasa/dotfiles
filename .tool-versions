@@ -17,7 +17,7 @@ kops 1.11.1
 kubectl 1.27.13
 kubectx 0.9.1
 kubent 0.7.0
-kustomize 4.5.2
+kustomize 5.0.1
 minikube 1.31.2
 mysql 8.0.31
 neovim 0.10.0
@@ -27,8 +27,9 @@ pluto 5.18.2
 postgres 14.4
 python 3.11.3
 redis 4.0.0
+redis-cli 6.2.14
 ripgrep 13.0.0
-ruby 3.1.0
+ruby 3.1.1
 sqlite 3.41.2
 stern 1.20.1
 telepresence 2.9.2
