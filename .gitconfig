@@ -1,3 +1,4 @@
+; https://blog.gitbutler.com/how-git-core-devs-configure-git/
 [user]
 	name = Jerome Basa
 	email = 119982+jldbasa@users.noreply.github.com
@@ -17,8 +18,10 @@
   protocol = https
 [push]
   default = tracking
+	autoSetupRemote = true
 [branch]
   autosetuprebase = always
+	sort = -committerdate
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
@@ -54,3 +57,15 @@
   tag = false
 ; [commit]
 ; 	template = /Users/jerome/.git-commit-template
+[column]
+	ui = auto
+[tag]
+	sort = version:refname
+[init]
+	defaultBranch = develop
+[diff]
+	algorithm = histogram
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
