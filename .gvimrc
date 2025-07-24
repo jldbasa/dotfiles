@@ -12,9 +12,9 @@ au FocusLost * silent! :wa " Save on losing window focus
 " set guifont=Iosevka\ Term:h16
 " set guifont=SourceCodePro+Powerline+Awesome\ Regular:h16
 " set guifont=FiraCode\ Nerd\ Font:h15
-set guifont=PragmataPro\ Mono\ Liga:h16
+set guifont=PragmataProMonoLiga\ Nerd\ Font:h16
 " set guifont=UbuntuMonoDerivativePowerline\ Nerd\ Font:h17
 " set guifont=Iosevka\ Nerd\ Font:h17
 " set guifont=UbuntuMono\ Nerd\ Font\ Mono:h17
 set termguicolors
-colorscheme falcon
+colorscheme catppuccin_mocha
