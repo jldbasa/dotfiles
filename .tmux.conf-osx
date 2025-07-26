@@ -4,9 +4,13 @@ set-option -sa terminal-overrides ",xterm*:Tc"
 set -g mouse on
 
 unbind C-b
-set -g prefix C-a
+# set -g prefix C-a
 # bind C-a send-prefix
-bind-key C-a last-window
+# bind-key C-a last-window
+
+set -g prefix C-Space
+bind C-Space send-prefix
+bind-key C-Space last-window
 
 # Allows for faster key repetition
 set -s escape-time 0
