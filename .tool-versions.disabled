@@ -10,6 +10,7 @@ gum 0.10.0
 helm 3.11.1
 java openjdk-19.0.2
 jq 1.6
+k9s 0.50.9
 kind 0.7.0
 kops 1.11.1
 kubectl 1.27.13
