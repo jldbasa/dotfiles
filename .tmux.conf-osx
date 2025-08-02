@@ -1,31 +1,49 @@
 # https://www.youtube.com/watch?v=DzNmUNvnB04
 
 set-option -sa terminal-overrides ",xterm*:Tc"
+set -g default-terminal "tmux-256color"
 set -g mouse on
 
-unbind C-b
-# set -g prefix C-a
-# bind C-a send-prefix
-# bind-key C-a last-window
+# Status bar on top
+set -g status-position top
 
+# Increase history size
+set -g history-limit 1000000
+
+# Renumber all windows when it's closed
+# set -g renumber-windows on
+
+# Use system clipboard
+set -g set-clipboard on
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+set -g pane-base-index 1
+set-window-option -g pane-base-index 1
+
+# Set vi-mode
+set-window-option -g mode-keys vi
+
+# Allows for faster key repetition
+set -s escape-time 0
+
+# Bindings
+# Change prefix to C-Space
+unbind C-b
 set -g prefix C-Space
 bind C-Space send-prefix
 bind-key C-Space last-window
 
-# Allows for faster key repetition
-set -s escape-time 0
+# split window
+unbind %
+bind - split-window -v -c "#{pane_current_path}"
+bind | split-window -h -c "#{pane_current_path}"
 
 # Vim style pane selection
 bind h select-pane -L
 bind j select-pane -D 
 bind k select-pane -U
 bind l select-pane -R
-
-# Start windows and panes at 1, not 0
-set -g base-index 1
-set -g pane-base-index 1
-set-window-option -g pane-base-index 1
-set-option -g renumber-windows on
 
 # Use Alt-arrow keys without prefix key to switch panes
 bind -n M-Left select-pane -L
@@ -41,14 +59,24 @@ bind -n S-Right next-window
 bind -n M-H previous-window
 bind -n M-L next-window
 
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'christoomey/vim-tmux-navigator'
-set -g @plugin 'dreamsofcode-io/catppuccin-tmux'
-# set -g @plugin 'catppuccin/tmux'
-set -g @plugin 'tmux-plugins/tmux-yank'
+# Source tmux config file
+unbind r
+bind r source-file ~/.tmux.conf \; display-message "Configuration reloaded!"
 
-# catppuccin
+# Display Popups
+bind C-g display-popup -d "#{pane_current_path}" -w 80% -h 80% -E "/Users/jerome/.local/share/mise/installs/lazygit/0.53.0/lazygit"
+bind C-j display-popup -E "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
+
+# Plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'dreamsofcode-io/catppuccin-tmux'
+# set -g @plugin 'omerxx/tmux-floax'
+# set -g @plugin 'tmux-plugins/tmux-sensible'
+# set -g @plugin 'christoomey/vim-tmux-navigator'
+# set -g @plugin 'catppuccin/tmux'
+# set -g @plugin 'tmux-plugins/tmux-yank'
+
+# Plugins: catppuccin
 set -g @catppuccin_window_right_separator "█ "
 set -g @catppuccin_window_number_position "right"
 set -g @catppuccin_window_middle_separator " | "
@@ -66,20 +94,11 @@ set -g @catppuccin_date_time_text "%Y-%m-%d %H:%M:%S"
 set -g @catppuccin_flavour 'mocha'
 
 
-run '~/.tmux/plugins/tpm/tpm'
-
-# set vi-mode
-set-window-option -g mode-keys vi
 
 # keybindings
 bind-key -T copy-mode-vi v send-keys -X begin-selection
 bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
 bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
-
-# split window
-unbind %
-bind - split-window -v -c "#{pane_current_path}"
-bind | split-window -h -c "#{pane_current_path}"
 
 # copy/paste
 # use Escape instead of [
@@ -87,4 +106,6 @@ unbind [
 bind Escape copy-mode
 unbind p
 bind p paste-buffer
+
+run '~/.tmux/plugins/tpm/tpm'
 
