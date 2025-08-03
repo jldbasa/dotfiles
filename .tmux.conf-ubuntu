@@ -2,8 +2,12 @@
 # | Setttings                                                                  |
 # +----------------------------------------------------------------------------+
 # C-b is not acceptable -- Vim uses it
-set-option -g prefix C-a
-bind-key C-a last-window
+# set-option -g prefix C-a
+# bind-key C-a last-window
+
+set -g prefix C-Space
+bind C-Space send-prefix
+bind-key C-Space last-window
 
 # Start numbering at 1
 set -g base-index 1
@@ -78,7 +82,7 @@ bind l select-pane -R
 
 # Allows us to use C-a a <command> to send commands to a TMUX session inside
 # another TMUX session
-bind-key a send-prefix
+# bind-key a send-prefix
 
 # Rather than constraining window size to the maximum size of any client
 # connected to the *session*, constrain window size to the maximum size of any
