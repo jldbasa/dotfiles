@@ -121,7 +121,7 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export EDITOR=nvim
 export PATH="${PATH}:${HOME}/.asdf/installs/gcloud/476.0.0/bin"
 export PATH="$HOME/bin:$PATH"
-export CLOUDSDK_PYTHON="/Users/jerome/.asdf/installs/python/3.11.3/bin/python3"
+export CLOUDSDK_PYTHON="/Users/jerome/.local/share/mise/installs/python/3.11.3/bin/python"
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
 export ANDROID_HOME="/Users/jerome/Library/Android/sdk"
 export JAVA_HOME="/Users/jerome/.asdf/installs/java/adoptopenjdk-11.0.25+9"
@@ -149,10 +149,20 @@ bindkey '^[[B' history-search-forward
 
 
 source ~/.config/zsh/zshrc_local
-eval "$(starship init zsh)"
+
+# starship
+# Check that the function `starship_zle-keymap-select()` is defined.
+# xref: https://github.com/starship/starship/issues/3418
+type starship_zle-keymap-select >/dev/null || \
+{
+  eval "$(starship init zsh)"
+}
+
+
 eval $(thefuck --alias)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 eval "$(mise activate zsh)"
+
