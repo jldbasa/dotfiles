@@ -124,7 +124,7 @@ export PATH="$HOME/bin:$PATH"
 export CLOUDSDK_PYTHON="/Users/jerome/.local/share/mise/installs/python/3.11.3/bin/python"
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
 export ANDROID_HOME="/Users/jerome/Library/Android/sdk"
-export JAVA_HOME="/Users/jerome/.asdf/installs/java/adoptopenjdk-11.0.25+9"
+export JAVA_HOME="/Users/jerome/.local/share/mise/installs/java/adoptopenjdk-11.0.25+9"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
