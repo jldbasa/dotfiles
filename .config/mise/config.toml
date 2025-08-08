@@ -14,9 +14,14 @@ kustomize = "5.0.1"
 lazygit = "latest"
 mysql = "8.0.31"
 neovim = "latest"
-node = "16.6.1"
+node = "24.5.0"
+postgres = "14.18"
 python = "3.11.3"
 ripgrep = "latest"
+ruby = "3.1.1"
 sshuttle = "latest"
 vault = "1.13.12"
 zoxide = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = []
