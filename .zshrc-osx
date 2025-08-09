@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -101,8 +101,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# aliases
-alias v="/Users/jerome/.local/share/mise/installs/neovim/0.11.0/nvim-macos-arm64/bin/nvim"
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
 
 # zsh-syntax-highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -111,28 +112,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#73747d"
 # zsh-autosuggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# z
-. /opt/homebrew/etc/profile.d/z.sh
-
-# env
-export EDITOR=nvim
-export PATH="${PATH}:${HOME}/.asdf/installs/gcloud/476.0.0/bin"
-export PATH="$HOME/bin:$PATH"
-export CLOUDSDK_PYTHON="/Users/jerome/.local/share/mise/installs/python/3.11.3/bin/python"
-export CLOUDSDK_PYTHON_SITEPACKAGES=1
-export ANDROID_HOME="/Users/jerome/Library/Android/sdk"
-export JAVA_HOME="/Users/jerome/.local/share/mise/installs/java/adoptopenjdk-11.0.25+9"
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
 # vi mode on shell
 set -o vi
-
-# asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # history
 HISTFILE=$HOME/.zhistory
@@ -143,12 +124,40 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
-# completion using arrow keys (based on history)
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
-
-
+# zsh config with sensitive info
 source ~/.config/zsh/zshrc_local
+
+# aliases
+alias ls="eza --no-filesize --long --color=always --icons=always --no-user" # options: --no-filesize --no-time --no-permissions
+alias v="/Users/jerome/.local/share/mise/installs/neovim/0.11.1/nvim-macos-arm64/bin/nvim"
+alias vi="/Users/jerome/.local/share/mise/installs/neovim/0.11.1/nvim-macos-arm64/bin/nvim"
+alias vim="/Users/jerome/.local/share/mise/installs/neovim/0.11.1/nvim-macos-arm64/bin/nvim"
+
+# ENV variables
+export ANDROID_HOME="/Users/jerome/Library/Android/sdk"
+export CLOUDSDK_PYTHON="/Users/jerome/.local/share/mise/installs/python/3.11.3/bin/python"
+export CLOUDSDK_PYTHON_SITEPACKAGES=1
+export EDITOR=nvim
+export JAVA_HOME="/Users/jerome/.local/share/mise/installs/java/adoptopenjdk-11.0.25+9"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+# export PATH="${PATH}:${HOME}/.asdf/installs/gcloud/476.0.0/bin"
+export PATH="$HOME/bin:$PATH"
+
+# Applications
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# mise
+eval "$(mise activate zsh)"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # starship
 # Check that the function `starship_zle-keymap-select()` is defined.
@@ -158,11 +167,9 @@ type starship_zle-keymap-select >/dev/null || \
   eval "$(starship init zsh)"
 }
 
-
+# thefuck
 eval $(thefuck --alias)
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-eval "$(mise activate zsh)"
+## zoxide
+eval "$(zoxide init zsh)"
 
