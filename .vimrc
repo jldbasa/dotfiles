@@ -221,8 +221,8 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 "clean-up whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-"remap esc with jj
-inoremap jj <ESC>
+"remap esc with jk
+inoremap jk <ESC>
 
 " make Y yank till end of line
 nnoremap Y y$
