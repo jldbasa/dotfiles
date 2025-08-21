@@ -2,6 +2,7 @@
 argocd = "3.0.6"
 bat = "latest"
 eza = "latest"
+fd = "latest"
 fzf = "latest"
 gcloud = "527.0.0"
 github-cli = "latest"

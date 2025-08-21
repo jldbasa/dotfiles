@@ -125,6 +125,8 @@ source ~/.config/zsh/zshrc_local
 
 # aliases
 alias ls="eza --no-filesize --long --color=always --icons=always --no-user" # options: --no-filesize --no-time --no-permissions
+alias pper="PASSWORD_STORE_DIR=~/.password-store pass"
+alias pwrk="PASSWORD_STORE_DIR=~/.password-store-work pass"
 alias v="/Users/jerome/.local/share/mise/installs/neovim/0.11.1/nvim-macos-arm64/bin/nvim"
 alias vi="/Users/jerome/.local/share/mise/installs/neovim/0.11.1/nvim-macos-arm64/bin/nvim"
 alias vim="/Users/jerome/.local/share/mise/installs/neovim/0.11.1/nvim-macos-arm64/bin/nvim"

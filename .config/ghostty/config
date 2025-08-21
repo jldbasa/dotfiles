@@ -5,16 +5,16 @@ font-size = 16
 # Theme
 theme = catppuccin-mocha
 cursor-invert-fg-bg = true
-background-blur-radius = 10
-background-opacity = 0.9
-# macos-titlebar-style = hidden
+# background-blur-radius = 10
+# background-opacity = 0.9
+macos-titlebar-style = hidden
 window-theme = ghostty
 
 # Window
 window-decoration = true
 
 # Keybindings
-keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
 
 # Mouse
 mouse-hide-while-typing = true
